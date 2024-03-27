@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Incluindo o arquivo de estilo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Container para centralizar o formulário na página -->
+    <div class="container-login">
+        <!-- Formulário de login -->
+        <form class="formulario-login" action="processar_login.php" method="post">
+            <!-- Título do formulário -->
+            <h2>Login</h2>
+            <!-- Grupo de entrada para o nome de usuário -->
+            <div class="grupo-input">
+                <label for="usuario">Usuário:</label>
+                <!-- Campo de entrada para o nome de usuário -->
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <!-- Grupo de entrada para a senha -->
+            <div class="grupo-input">
+                <label for="senha">Senha:</label>
+                <!-- Campo de entrada para a senha -->
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <!-- Botão de login -->
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
