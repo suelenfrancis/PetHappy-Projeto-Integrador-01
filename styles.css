@@ -9,9 +9,11 @@ body {
 /* Estilos para o container do formulário */
 .container-login {
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    /* justify-content: center; /* Centraliza horizontalmente */
+    /*align-items: center; /* Centraliza verticalmente */
     height: 100vh; /* 100% da altura da viewport */
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 /* Estilos para o formulário de login */
@@ -20,17 +22,20 @@ body {
     padding: 20px; /* Espaçamento interno */
     border-radius: 8px; /* Borda arredondada */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    width: 25%;
 }
 
 /* Estilos para os grupos de entrada (rótulo + campo de entrada) */
 .grupo-input {
     margin-bottom: 15px; /* Espaçamento inferior */
+    width: 95%;
 }
 
 /* Estilos para os rótulos dos campos de entrada */
 .grupo-input label {
+    font-size: 14px;
     display: block; /* Mostra em bloco */
-    font-weight: bold; /* Negrito */
+    font-weight: normal; /* Negrito */
 }
 
 /* Estilos para os campos de entrada */
@@ -45,7 +50,7 @@ body {
 button {
     width: 100%; /* Largura total */
     padding: 10px; /* Espaçamento interno */
-    background-color: #007bff; /* Cor de fundo azul */
+    background-color: #b18761d9; /* Cor de fundo azul */
     color: #ffffff; /* Cor do texto branco */
     border: none; /* Sem borda */
     border-radius: 5px; /* Borda arredondada */
@@ -55,5 +60,5 @@ button {
 
 /* Estilos para o botão de login ao passar o mouse */
 button:hover {
-    background-color: #0056b3; /* Cor de fundo azul mais escura */
+    background-color: #694520; /* Cor de fundo azul mais escura */
 }

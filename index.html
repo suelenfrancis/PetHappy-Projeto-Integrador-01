@@ -13,21 +13,24 @@
         <!-- Formulário de login -->
         <form class="formulario-login" action="processar_login.php" method="post">
             <!-- Título do formulário -->
-            <h2>Login</h2>
+            <div align="center">
+                <img src="logo_login.jpg" style="height: 50%;width: 50%">
+            </div>
+            <h2 style="text-align: center; margin-top: 0px; margin-bottom: 10px; color: #694520">Login</h2>
             <!-- Grupo de entrada para o nome de usuário -->
             <div class="grupo-input">
-                <label for="usuario">Usuário:</label>
+                <label for="usuario" style="color: #694520">Usuário:</label>
                 <!-- Campo de entrada para o nome de usuário -->
-                <input type="text" id="usuario" name="usuario" required>
+                <input type="text" id="usuarioLogin" name="usuario" required>
             </div>
             <!-- Grupo de entrada para a senha -->
             <div class="grupo-input">
-                <label for="senha">Senha:</label>
+                <label for="senha" style="color: #694520">Senha:</label>
                 <!-- Campo de entrada para a senha -->
-                <input type="password" id="senha" name="senha" required>
+                <input type="password" id="senhaLogin" name="senha" required>
             </div>
             <!-- Botão de login -->
-            <button type="submit">Login</button>
+            <button type="submit" style="margin-top: 15px">Entrar</button>
         </form>
     </div>
 </body>
