@@ -1,13 +1,5 @@
-/* Estilos para o corpo da página */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
 /* Estilos para o container do formulário */
-.container-login {
+.containerLogin {
     display: flex;
     /* justify-content: center; /* Centraliza horizontalmente */
     /*align-items: center; /* Centraliza verticalmente */
@@ -17,7 +9,7 @@ body {
 }
 
 /* Estilos para o formulário de login */
-.formulario-login {
+.formularioLogin {
     background-color: #ffffff; /* Fundo branco */
     padding: 20px; /* Espaçamento interno */
     border-radius: 8px; /* Borda arredondada */
@@ -26,20 +18,20 @@ body {
 }
 
 /* Estilos para os grupos de entrada (rótulo + campo de entrada) */
-.grupo-input {
+.grupoInput {
     margin-bottom: 15px; /* Espaçamento inferior */
     width: 95%;
 }
 
 /* Estilos para os rótulos dos campos de entrada */
-.grupo-input label {
+.grupoInput label {
     font-size: 14px;
     display: block; /* Mostra em bloco */
     font-weight: normal; /* Negrito */
 }
 
 /* Estilos para os campos de entrada */
-.grupo-input input {
+.grupoInput input {
     width: 100%; /* Largura total */
     padding: 10px; /* Espaçamento interno */
     border: 1px solid #cccccc; /* Borda cinza */
@@ -47,7 +39,7 @@ body {
 }
 
 /* Estilos para o botão de login */
-button {
+.botao {
     width: 100%; /* Largura total */
     padding: 10px; /* Espaçamento interno */
     background-color: #b18761d9; /* Cor de fundo azul */
@@ -59,6 +51,6 @@ button {
 }
 
 /* Estilos para o botão de login ao passar o mouse */
-button:hover {
+.botao:hover {
     background-color: #694520; /* Cor de fundo azul mais escura */
 }
