@@ -17,27 +17,6 @@
     width: 25%;
 }
 
-/* Estilos para os grupos de entrada (rótulo + campo de entrada) */
-.grupoInput {
-    margin-bottom: 15px; /* Espaçamento inferior */
-    width: 95%;
-}
-
-/* Estilos para os rótulos dos campos de entrada */
-.grupoInput label {
-    font-size: 14px;
-    display: block; /* Mostra em bloco */
-    font-weight: normal; /* Negrito */
-}
-
-/* Estilos para os campos de entrada */
-.grupoInput input {
-    width: 100%; /* Largura total */
-    padding: 10px; /* Espaçamento interno */
-    border: 1px solid #cccccc; /* Borda cinza */
-    border-radius: 5px; /* Borda arredondada */
-}
-
 /* Estilos para o botão de login */
 .botao {
     width: 100%; /* Largura total */
@@ -53,4 +32,10 @@
 /* Estilos para o botão de login ao passar o mouse */
 .botao:hover {
     background-color: #694520; /* Cor de fundo azul mais escura */
+}
+
+.botao:disabled {
+    cursor: default;
+    background-color: #cccccc;
+    color: #666666;
 }
