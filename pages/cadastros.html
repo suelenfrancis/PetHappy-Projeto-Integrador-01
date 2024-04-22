@@ -12,9 +12,13 @@
     <button type="button" style="margin-top: 10px; margin-left: 10px ;--bs-btn-bg: #b18761d9; --bs-btn-hover-bg:#b17b43; --bs-btn-border-color:white; --bs-btn-hover-border-color:white; --bs-btn-active-bg:#462d14" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#idModalCadastroFuncionario">
         Funcionario
     </button>
+
+    <button type="button" style="margin-top: 10px; margin-left: 10px ;--bs-btn-bg: #b18761d9; --bs-btn-hover-bg:#b17b43; --bs-btn-border-color:white; --bs-btn-hover-border-color:white; --bs-btn-active-bg:#462d14" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#idModalCadastroCliente">
+        Cliente
+    </button>
     
-    <div class="modal fade" id="idModalCadastroFuncionario" tabindex="-1" aria-labelledby="modalCadastroFuncionario" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal fade" id="idModalCadastroFuncionario" tabindex="-1" aria-labelledby="modalCadastroFuncionario" aria-hidden="true">
+            <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="modalCadastroFuncionario">Cadastro de Funcionário</h1>
@@ -53,14 +57,78 @@
                     <span class="input-group-text" style="width: 150px" >Endereço</span>
                     <input id="dsEndereco" type="text" style="border-color: #b18761d9" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                 </div>
+            </div>
             <div class="modal-footer">
                 <button id="btnFechar" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                <button id="btnSalvar" type="button" style="--bs-btn-bg: #b18761d9; --bs-btn-hover-bg:#b17b43; --bs-btn-border-color:white; --bs-btn-hover-border-color:white; --bs-btn-active-bg:#462d14" class="btn btn-primary">Salvar</button>
+                <button id="btnSalvarCadFunc" type="button" style="--bs-btn-bg: #b18761d9; --bs-btn-hover-bg:#b17b43; --bs-btn-border-color:white; --bs-btn-hover-border-color:white; --bs-btn-active-bg:#462d14" class="btn btn-primary">Salvar</button>
             </div>
             </div>
         </div>
     </div>
+    
 
+    <div class="modal fade" id="idModalCadastroCliente" tabindex="-1" aria-labelledby="modalCadastroCliente" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalCadastroCliente">Cadastro de Cliente</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" style="width: 150px">Nome Completo</span>
+                    <input id="dsNomeCompletoCliente" type="text" style="border-color: #b18761d9" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" style="width: 150px">Telefone</span>
+                    <input id="nuTelefoneCliente" type="text" style="border-color: #b18761d9" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" style="width: 150px">Tel. de emergência</span>
+                    <input id="nuTelefoneEmergenciaCliente" type="text" style="border-color: #b18761d9" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" style="width: 150px">Sexo</span>
+                    <select id="dsSexoCliente" class="form-select" style="border-color: #b18761d9" aria-label="Default select example">
+                        <option value="1">Masculino</option>
+                        <option value="2">Feminino</option>
+                        <option value="3">Outro</option>
+                    </select>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" style="width: 150px">Data de Nascimento</span>
+                    <input id="dtNascimentoCliente" type="text" style="border-color: #b18761d9" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" style="width: 150px" >Estado</span>
+                    <input id="dsEstadoCliente" type="text" style="border-color: #b18761d9" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" style="width: 150px">Cidade</span>
+                    <input id="dsCidadeCliente" type="text" style="border-color: #b18761d9" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" style="width: 150px" >Rua</span>
+                    <input id="dsEnderecoCliente" type="text" style="border-color: #b18761d9" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" style="width: 150px">Número</span>
+                    <input id="nuEnderecoCliente" type="text" style="border-color: #b18761d9" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" style="width: 150px">Complemento</span>
+                    <input id="dsEnderecoComplementoCliente" type="text" style="border-color: #b18761d9" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+              </div>           
+            <div class="modal-footer">
+                <button id="btnFechar" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button id="btnSalvarCadCliente" type="button" style="--bs-btn-bg: #b18761d9; --bs-btn-hover-bg:#b17b43; --bs-btn-border-color:white; --bs-btn-hover-border-color:white; --bs-btn-active-bg:#462d14" class="btn btn-primary">Salvar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+      
     <script src="js/cadastros.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
