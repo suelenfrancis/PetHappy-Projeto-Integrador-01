@@ -2,9 +2,10 @@
   "name": "pethappy-projeto-integrador-01",
   "version": "1.0.0",
   "description": "Projeto desenvolvido pelos alunos da UNIVESP.",
-  "main": "index.js",
+  "main": "index.html",
   "type": "module",
   "scripts": {
+    "dev": "lite-server"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,8 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
   }
 }

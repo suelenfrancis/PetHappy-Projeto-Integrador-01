@@ -1,0 +1,59 @@
+/* Estilos para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para o container do formulário */
+.container-login {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* 100% da altura da viewport */
+}
+
+/* Estilos para o formulário de login */
+.formulario-login {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Borda arredondada */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilos para os grupos de entrada (rótulo + campo de entrada) */
+.grupo-input {
+    margin-bottom: 15px; /* Espaçamento inferior */
+}
+
+/* Estilos para os rótulos dos campos de entrada */
+.grupo-input label {
+    display: block; /* Mostra em bloco */
+    font-weight: bold; /* Negrito */
+}
+
+/* Estilos para os campos de entrada */
+.grupo-input input {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #cccccc; /* Borda cinza */
+    border-radius: 5px; /* Borda arredondada */
+}
+
+/* Estilos para o botão de login */
+button {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Espaçamento interno */
+    background-color: #007bff; /* Cor de fundo azul */
+    color: #ffffff; /* Cor do texto branco */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar por cima */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+
+/* Estilos para o botão de login ao passar o mouse */
+button:hover {
+    background-color: #0056b3; /* Cor de fundo azul mais escura */
+}
