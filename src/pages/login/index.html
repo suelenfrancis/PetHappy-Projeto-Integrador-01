@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>PetHappy - Login</title>
     <!-- Incluindo o arquivo de estilo CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,7 +11,7 @@
     <!-- Container para centralizar o formulário na página -->
     <div class="container-login">
         <!-- Formulário de login -->
-        <form class="formulario-login" action="processar_login.php" method="post">
+        <form class="formulario-login" data-form>
             <!-- Título do formulário -->
             <div align="center">
                 <img src="../../../assets/img/logo.png" style="height: 50%;width: 50%">
@@ -21,17 +21,18 @@
             <div class="grupo-input">
                 <label for="usuario" style="color: #694520">Usuário:</label>
                 <!-- Campo de entrada para o nome de usuário -->
-                <input type="text" id="usuarioLogin" name="usuario" required>
+                <input type="text" id="usuarioLogin" name="username" required>
             </div>
             <!-- Grupo de entrada para a senha -->
             <div class="grupo-input">
                 <label for="senha" style="color: #694520">Senha:</label>
                 <!-- Campo de entrada para a senha -->
-                <input type="password" id="senhaLogin" name="senha" required>
+                <input type="password" id="senhaLogin" name="password" required>
             </div>
             <!-- Botão de login -->
             <button type="submit" style="margin-top: 15px">Entrar</button>
         </form>
     </div>
 </body>
+<script type="module" src='login.js'></script>
 </html>
