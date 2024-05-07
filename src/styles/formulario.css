@@ -1,0 +1,42 @@
+.formulario {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.formulario fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid;
+    margin: 0.5rem 0;
+}
+
+.formulario fieldset legend {
+    font-weight: 700;
+}
+
+.formulario__titulo {
+    font-weight: 700;
+    text-align: right;
+}
+
+.formulario__campo {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.formulario__campo label {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.formulario__campo input {
+    width: 80%;
+}
+
+.formulario__botao {
+    padding: 0.5rem;
+}

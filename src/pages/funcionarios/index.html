@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetHappy - Home</title>
     <link rel="stylesheet" href="../../styles/reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../../styles/global.css">
     <link rel="stylesheet" href="../../styles/layout.css">
     <link rel="stylesheet" href="../../styles/cabecalho.css">
     <link rel="stylesheet" href="../../styles/rodape.css">
     <link rel="stylesheet" href="../../styles/menu-lateral.css">
     <link rel="stylesheet" href="../../styles/dashboard.css">
+    <link rel="stylesheet" href="../../styles/cartao.css">
 </head>
 <body>
     <header>
@@ -25,13 +27,13 @@
             <nav>
                 <ul>
                     <li>
-                        <div class="menu-lateral__item--selecionado">
+                        <div>
                             <a href="../home/index.html">Visão Geral</a>
                         </div>
                     </li>
                     <li>
-                        <div>
-                            <a href="../funcionarios/index.html">Funcionários</a>
+                        <div class="menu-lateral__item--selecionado">
+                            <a href="#">Funcionários</a>
                         </div>
                     </li>
                     <li>
@@ -43,21 +45,7 @@
             </nav>
         </aside>
         <main>
-            <h1 class="dashboard__titulo">Visão Geral</h1>
-            <div class="dashboard__cartoes">
-                <div class="cartao__container">
-                    <p class="cartao__valor">0</p>
-                    <p class="cartao__descricao">Total de Funcionários</p>
-                </div>
-                <div class="cartao__container">
-                    <p class="cartao__valor">0</p>
-                    <p class="cartao__descricao">Total de Clientes</p>
-                </div>
-                <div class="cartao__container">
-                    <p class="cartao__valor">0</p>
-                    <p class="cartao__descricao">Total de Pets</p>
-                </div>
-            </div>
+            <div class="cartoes__container" data-funcionarios></div>
         </main>
     </div>
     <footer>
@@ -65,5 +53,6 @@
             <p>&copy; 2024 Grupo 13 - Todos os direitos reservados</p>
         </div>
     </footer>
+    <script type="module" src="getFuncionarios.js"></script>
 </body>
 </html>

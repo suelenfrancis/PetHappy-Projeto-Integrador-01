@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetHappy - Home</title>
+    <link rel="stylesheet" href="../../styles/reset.css">
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/layout.css">
+    <link rel="stylesheet" href="../../styles/cabecalho.css">
+    <link rel="stylesheet" href="../../styles/rodape.css">
+    <link rel="stylesheet" href="../../styles/menu-lateral.css">
+    <link rel="stylesheet" href="../../styles/dashboard.css">
+    <link rel="stylesheet" href="../../styles/cartao.css">
+    <link rel="stylesheet" href="../../styles/botao-cadastro.css">
+    <link rel="stylesheet" href="../../styles/modal.css">
+    <link rel="stylesheet" href="../../styles/formulario.css">
+</head>
+<body>
+    <header>
+        <div class="cabecalho__container">
+            <img class="cabecalho__logo" src="../../../assets/img/logo.jpg" alt="Logo da PetHappy">
+            <h1 class="cabecalho__titulo">PetHappy</h1>
+        </div>
+    </header>
+    <div class="layout-basico__container">
+        <aside class="menu-lateral__container">
+            <nav>
+                <ul>
+                    <li>
+                        <div>
+                            <a href="../home/index.html">Visão Geral</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="../funcionarios/index.html">Funcionários</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu-lateral__item--selecionado">
+                            <a href="#">Clientes</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <div class="botao-cadastro__container">
+                <div class="botao-cadastro">
+                    <p class="botao-cadastro__texto" data-modal-trigger>Novo Cliente</p>
+                </div>
+            </div>
+            <div class="cartoes__container" data-clientes></div>
+
+            <div class="modal">
+                <div class="modal__content">
+                    <h1 class="formulario__titulo">Cadastrar Novo Cliente</h1>
+                    <form class="formulario" data-formulario>
+                        <div class="formulario__campo">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <fieldset>
+                            <legend>Endereço</legend>
+                            <div class="formulario__campo">
+                                <label for="cidade">Cidade</label>
+                                <input type="text" id="cidade" name="cidade" required>
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="bairro">Bairro</label>
+                                <input type="text" id="bairro" name="bairro" required>
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="rua">Rua</label>
+                                <input type="text" id="rua" name="rua" required>
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="numero">Número</label>
+                                <input type="text" id="numero" name="numero" required>
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="complemento">Complemento</label>
+                                <input type="text" id="complemento" name="complemento">
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Telefones</legend>
+                            <div class="formulario__campo">
+                                <label for="telefone"></label>
+                                <input type="text" id="telefone" name="telefone" required>
+                            </div>
+                            <div class="formulario__campo">
+                                <label for="telefone2"></label>
+                                <input type="text" id="telefone2" name="telefone2">
+                            </div>
+                        </fieldset>
+                        <div>
+                            <input type="submit" value="Cadastrar" class="formulario__botao">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <footer>
+        <div class="rodape__container">
+            <p>&copy; 2024 Grupo 13 - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    <script type="module" src="getClientes.js"></script>
+    <script src="../../scripts/modal.js"></script>
+    <script type="module" src="cadastrarCliente.js"></script>
+</body>
+</html>

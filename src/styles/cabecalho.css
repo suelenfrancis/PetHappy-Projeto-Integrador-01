@@ -1,0 +1,17 @@
+.cabecalho__container {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+    background-color: #694520;
+    color: #f5f5f5;
+    align-items: center;
+}
+
+.cabecalho__titulo {
+    font-size: 1.5rem;
+}
+
+.cabecalho__logo {
+    width: 64px;
+    border-radius: 50%;
+}

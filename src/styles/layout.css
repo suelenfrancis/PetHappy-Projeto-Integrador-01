@@ -1,0 +1,9 @@
+.layout-basico__container {
+    display: flex;
+    width: 100%;
+}
+
+.layout-basico__container main {
+    width: 100%;
+    padding: 1rem;
+}
