@@ -13,7 +13,7 @@ const renderizaClientes = (clientes) => {
         </div>
         `
     );
-    tabela.innerHTML = clientesHtml;
+    tabela.innerHTML = clientesHtml.join(' ');
 };
 
 const getClientes = async () => {
