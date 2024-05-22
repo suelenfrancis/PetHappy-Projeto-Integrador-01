@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../styles/menu-lateral.css">
     <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="../styles/cartao.css">
+    <link rel="stylesheet" href="../styles/botao-cadastro.css">
 </head>
 <body>
     <header>
@@ -25,6 +26,11 @@
     <div class="layout-basico__container">
         <aside data-menu-lateral></aside>
         <main>
+            <div class="botao-cadastro__container">
+                <div class="botao-cadastro">
+                    <p class="botao-cadastro__texto" data-modal-trigger>Novo Funcionário</p>
+                </div>
+            </div>
             <div class="cartoes__container" data-funcionarios></div>
         </main>
     </div>
@@ -35,5 +41,5 @@
     </footer>
 </body>
 <script src="../scripts/renderizarMenuLateral.js"></script>
-<script type="module" src="../../scripts/funcionarios/getFuncionarios.js"></script>
+<script type="module" src="../scripts/funcionarios/getFuncionarios.js"></script>
 </html>
