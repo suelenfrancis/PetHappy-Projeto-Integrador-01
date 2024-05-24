@@ -11,7 +11,7 @@ const fazerLogin = async (evento) => {
         data
     );
     if(response.status == 200) {
-        window.location.replace('../home/index.html');
+        window.location.replace('../pages/index.html');
     } else {
         alert('Usuário e/ou senha não verificado');
     }
