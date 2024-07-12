@@ -5,16 +5,17 @@
   "main": "index.html",
   "type": "module",
   "scripts": {
-    "dev": "lite-server"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.3.3",
-    "jquery": "^3.7.1"
-  },
-  "devDependencies": {
-    "lite-server": "^2.6.1"
+    "next": "^14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
