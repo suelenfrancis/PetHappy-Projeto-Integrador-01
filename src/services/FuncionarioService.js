@@ -1,19 +1,33 @@
+import HttpClient from '../middleware/HttpClient';
+
 class FuncionarioService {
-    
+
+    static async cadastrar(dados) {
+        const response = await HttpClient.request(
+            'http://127.0.0.1:8000/funcionarios/',
+            'POST',
+            dados
+        )
+        console.log(response.body);
+        if (response.status == 201) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     static async obterTodos() {
-        try {
-            const response = await HttpClient.request(
-                'http://localhost:8000/funcionarios/',
-                'GET'
-            );
-            if (response.status == 200) {
-                return response.body
-            } else {
-                alert('Não foi possível obter os dados.');
-            }
-        } catch (error) {
-            alert(`Ocorreu um erro: ${error.message}`);
+        const response = await HttpClient.request(
+            'http://127.0.0.1:8000/funcionarios/',
+            'GET'
+        );
+        if (response.status == 200) {
+            return response.body
+        } else {
+            return null;
         }
     }
 
 }
+
+export default FuncionarioService;

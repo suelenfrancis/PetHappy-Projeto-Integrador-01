@@ -1,4 +1,4 @@
-function TextInput({ name, label, value, onChange, isPassword, placeholder = '' }) {
+function TextInput({ name, label, value, onChange, isPassword, placeholder = '', maxLength }) {
     return (
         <div>
             <label htmlFor={ name }>{ label }</label>
@@ -8,6 +8,7 @@ function TextInput({ name, label, value, onChange, isPassword, placeholder = '' 
                 value={ value }
                 onChange={ onChange }
                 placeholder={ placeholder }
+                maxLength={ maxLength }
             />
             <style jsx>{`
                 div {
@@ -15,9 +16,6 @@ function TextInput({ name, label, value, onChange, isPassword, placeholder = '' 
                     display: flex;
                     flex-direction: column;
                     gap: 0.4rem;
-                }
-                label {
-                    color: #694520;
                 }
                 input {
                     padding: 10px;
