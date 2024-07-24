@@ -7,6 +7,11 @@
     padding: 0 1rem;
 }
 
+.cabecalho a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .cabecalho__container {
     display: flex;
     gap: 1rem;

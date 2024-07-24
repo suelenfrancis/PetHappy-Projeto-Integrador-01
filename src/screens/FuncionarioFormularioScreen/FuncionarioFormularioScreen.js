@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import TextInput from '../../components/TextInput/TextInput';
-import style from './CadastrarFuncionarioScreen.module.css';
+import style from './FuncionarioFormularioScreen.module.css';
 import FuncionarioService from '../../services/FuncionarioService';
 
 
