@@ -8,7 +8,6 @@ class FuncionarioService {
             'POST',
             dados
         )
-        console.log(response.body);
         if (response.status == 201) {
             return true;
         } else {
@@ -25,6 +24,31 @@ class FuncionarioService {
             return response.body
         } else {
             return null;
+        }
+    }
+
+    static async obterPeloId(id) {
+        const response = await HttpClient.request(
+            `/funcionarios/${id}/`,
+            'GET'
+        );
+        if(response.status == 200) {
+            return response.body;
+        } else {
+            return null;
+        }
+    }
+
+    static async atualizar(funcionarioId, dados) {
+        const response = await HttpClient.request(
+            `/funcionarios/${funcionarioId}/`,
+            'PUT',
+            dados
+        );
+        if(response.status == 200) {
+            return true;
+        } else {
+            return false;
         }
     }
 

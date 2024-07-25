@@ -6,14 +6,14 @@ import style from './FuncionarioFormularioScreen.module.css';
 import FuncionarioService from '../../services/FuncionarioService';
 
 
-function FuncionarioFormularioScreen() {
-    const [nome, setNome] = React.useState('');
-    const [cidade, setCidade] = React.useState('');
-    const [bairro, setBairro] = React.useState('');
-    const [rua, setRua] = React.useState('');
-    const [numero, setNumero] = React.useState('');
-    const [telefone1, setTelefone1] = React.useState('');
-    const [telefone2, setTelefone2] = React.useState('');
+function FuncionarioFormularioScreen({ funcionario }) {
+    const [nome, setNome] = React.useState(funcionario?.pessoa.nome ?? '');
+    const [cidade, setCidade] = React.useState(funcionario?.pessoa.endereco.cidade ?? '');
+    const [bairro, setBairro] = React.useState(funcionario?.pessoa.endereco.bairro ?? '');
+    const [rua, setRua] = React.useState(funcionario?.pessoa.endereco.rua ?? '');
+    const [numero, setNumero] = React.useState(funcionario?.pessoa.endereco.numero ?? '');
+    const [telefone1, setTelefone1] = React.useState(funcionario?.pessoa.telefones[0].numero ?? '');
+    const [telefone2, setTelefone2] = React.useState(funcionario?.pessoa.telefones[1]?.numero ?? '');
     const [email, setEmail] = React.useState('');
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
@@ -21,7 +21,9 @@ function FuncionarioFormularioScreen() {
     const router = useRouter();
 
     const Cabecalho = () => {
-        return <h2>Cadastrar Funcionário</h2>;
+        return funcionario 
+            ? <h2>Atualizar Funcionário</h2> 
+            : <h2>Cadastrar Funcionário</h2>;
     }
 
     async function cadastrarFuncionario(event) {
@@ -30,33 +32,32 @@ function FuncionarioFormularioScreen() {
         //console.log(dadosFormulario)
         const dados = {
             pessoa: {
-                nome: nome,
+                nome: nome.trim(),
                 endereco: {
-                    cidade: cidade,
-                    bairro: bairro,
-                    rua: rua,
-                    numero: numero
+                    cidade: cidade.trim(),
+                    bairro: bairro.trim(),
+                    rua: rua.trim(),
+                    numero: numero.trim()
                 },
                 telefones: [
                     {
-                        numero: telefone1,
+                        numero: telefone1.trim(),
                         is_contato_emergencia: true
                     },
                 ]
             },
             usuario: {
-                email: email,
-                username: username,
-                password: password
+                email: email.trim(),
+                username: username.trim(),
+                password: password.trim()
             }
         }
         if (telefone2.length != 0) {
             dados.pessoa.telefones.push({
-                numero: telefone2,
+                numero: telefone2.trim(),
                 is_contato_emergencia: false
             })
         }
-        console.log(dados);
         const sucesso = await FuncionarioService.cadastrar(dados);
         if (sucesso) {
             router.push('/funcionarios');
@@ -65,9 +66,46 @@ function FuncionarioFormularioScreen() {
         }
     }
 
+    async function atualizarFuncionario(event) {
+        event.preventDefault();
+        const dados = {
+            pessoa: {
+                nome: nome.trim(),
+                endereco: {
+                    cidade: cidade.trim(),
+                    bairro: bairro.trim(),
+                    rua: rua.trim(),
+                    numero: numero.trim()
+                },
+                telefones: [
+                    {
+                        id: funcionario.pessoa.telefones[0].id,
+                        numero: telefone1.trim(),
+                        is_contato_emergencia: true
+                    },
+                ]
+            }
+        }
+        if (telefone2.length != 0) {
+            dados.pessoa.telefones.push({
+                id: funcionario.pessoa.telefones[1].id,
+                numero: telefone2.trim(),
+                is_contato_emergencia: false
+            })
+        }
+        const sucesso = await FuncionarioService.atualizar(funcionario.id, dados);
+        if (sucesso) {
+            router.push('/funcionarios');
+        } else {
+            alert('Ocorreu um erro ao atualizar o funcionário.');
+        }
+    }
+
     return (
         <main className={ style.container }>
-            <form className={ style.formulario } onSubmit={ cadastrarFuncionario }>
+            <form 
+                className={ style.formulario } 
+                onSubmit={ funcionario ? atualizarFuncionario : cadastrarFuncionario }>
                 <Cabecalho />
                 <TextInput 
                     label={'Nome'} 
@@ -115,6 +153,7 @@ function FuncionarioFormularioScreen() {
                         placeholder={'Nº de telefone (apenas números)'}
                         value={ telefone1 }
                         onChange={ (event) => setTelefone1(event.target.value) }
+                        maxLength={15}
                     />
                     <TextInput 
                         label={'Telefone adicional'} 
@@ -122,8 +161,10 @@ function FuncionarioFormularioScreen() {
                         placeholder={'Nº de telefone (apenas números)'}
                         value={ telefone2 }
                         onChange={ (event) => setTelefone2(event.target.value) }
+                        maxLength={15}
                     /> 
                 </fieldset>
+               {!funcionario &&
                 <fieldset>
                     <legend>Cadastro no Sistema</legend>
                     <TextInput 
@@ -149,9 +190,13 @@ function FuncionarioFormularioScreen() {
                         maxLength={ 8 }
                         isPassword
                     /> 
-                </fieldset>
+                </fieldset>}
                 <div className={ style.formulario__botaoContainer }>
-                    <button type='submit'>Cadastrar Novo Funcionário</button>
+                    <button type='submit'>{
+                        funcionario 
+                        ? 'Atualizar Funcionário'
+                        :'Cadastrar Novo Funcionário'
+                    }</button>
                 </div>
             </form>
         </main>

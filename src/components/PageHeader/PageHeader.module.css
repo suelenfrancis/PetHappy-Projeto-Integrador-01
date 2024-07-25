@@ -12,6 +12,10 @@
     color: inherit;
 }
 
+.cabecalho a:hover {
+    cursor: pointer;
+}
+
 .cabecalho__container {
     display: flex;
     gap: 1rem;
