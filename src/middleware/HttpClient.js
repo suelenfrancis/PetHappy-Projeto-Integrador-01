@@ -1,8 +1,8 @@
 class HttpClient {
 
-    static async request(url, method = 'GET', data = null) {
+    static async request(endpoint, method = 'GET', data = null) {
         const response = await fetch(
-            url,
+            `${process.env.BASE_URL}${endpoint}`,
             {
                 method: method,
                 headers: { 'Content-Type': 'application/json' },

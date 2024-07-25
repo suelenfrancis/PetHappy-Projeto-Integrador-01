@@ -4,7 +4,7 @@ class FuncionarioService {
 
     static async cadastrar(dados) {
         const response = await HttpClient.request(
-            'http://127.0.0.1:8000/funcionarios/',
+            '/funcionarios/',
             'POST',
             dados
         )
@@ -18,7 +18,7 @@ class FuncionarioService {
 
     static async obterTodos() {
         const response = await HttpClient.request(
-            'http://127.0.0.1:8000/funcionarios/',
+            '/funcionarios/',
             'GET'
         );
         if (response.status == 200) {
