@@ -1,23 +1,25 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import TextInput from '../../components/TextInput/TextInput';
 import style from './LoginScreen.module.css';
 import AuthService from '../../services/auth/AuthService';
+import InputTextoForm from '../../components/InputTextoForm/InputTextoForm';
 
 
 function LoginScreen() {
 
-    const [username, setUsername] = React.useState('');
-    const [password, setPassword] = React.useState('');
-
     const router = useRouter();
 
-    async function onSubmit(event) {
+    async function FazerLogin(event): Promise<void> {
         event.preventDefault();
+        const dadosFormulario = new FormData(event.target);
+        const credenciais = {
+            username: dadosFormulario.get('username').toString().trim(),
+            password: dadosFormulario.get('password').toString().trim()
+        }
         try {
-            await AuthService.login(username, password);
-            router.push('/home');
+            await AuthService.login(credenciais);
+            router.push('/');
         } catch (e) {
             alert(`Ocorreu um erro durante a tentativa de login: ${e}`);
         }
@@ -26,31 +28,26 @@ function LoginScreen() {
 
     return (
         <main className={ style.container }>
-            <form className={ style.formulario }>
+            <form className={ style.formulario } onSubmit={ FazerLogin }>
                 <img className={ style.formulario__img } src="/img/logo.png" />
                 <h2 className={ style.formulario__titulo }>Login</h2>
                 <div className={ style.formulario__inputs }>
-                    <TextInput
+                    <InputTextoForm
                         isPassword={ false }
                         label={ 'Usuário' }
                         placeholder={ 'Insira seu nome de usuário' }
-                        name={'usuario'}
-                        value={username}
-                        onChange={ (event) => setUsername(event.target.value) } 
+                        name={ 'username' }
+                        maxLength={ 20 } 
                     />
-                    <TextInput
+                    <InputTextoForm
                         isPassword={ true }
                         label={ 'Senha' }
                         placeholder={ 'Insira sua senha' }
-                        name={'senha'}
-                        value={password}
-                        onChange={ (event) => setPassword(event.target.value) } 
+                        name={ 'password' }
+                        maxLength={ 8 }
                     />
                 </div>
-                <button 
-                    className={ style.botao }
-                    onClick={ onSubmit }
-                >Entrar</button>
+                <input className={ style.botao } type="submit" />
             </form>
         </main>
     );
