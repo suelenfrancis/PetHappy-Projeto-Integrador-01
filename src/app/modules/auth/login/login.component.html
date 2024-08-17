@@ -1,5 +1,5 @@
 <div class="container">
-    <form class="formulario">
+    <form class="formulario" [formGroup]="formulario" (ngSubmit)="fazerLogin()">
         <img class="formulario__img" src="assets/img/logo.png" />
         <h2 class="formulario__titulo">Login</h2>
         <div class="formulario__inputs">
@@ -9,6 +9,7 @@
                     id="usuario"
                     type="text" 
                     name="usuario"
+                    formControlName="username"
                 />
             </div>
             <div class="input__login">
@@ -17,6 +18,7 @@
                     id="senha"
                     type="password" 
                     name="senha"
+                    formControlName="password"
                 />
             </div>
         </div>
