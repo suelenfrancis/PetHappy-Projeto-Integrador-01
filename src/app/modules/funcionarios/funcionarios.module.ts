@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FuncionariosComponent } from './funcionarios.component';
 import { FuncionarioFormularioComponent } from './funcionario-formulario/funcionario-formulario.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -11,7 +12,8 @@ import { FuncionarioFormularioComponent } from './funcionario-formulario/funcion
     FuncionarioFormularioComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     FuncionariosComponent

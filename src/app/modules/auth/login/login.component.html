@@ -1,27 +1,36 @@
-<div class="container">
-    <form class="formulario" [formGroup]="formulario" (ngSubmit)="fazerLogin()">
-        <img class="formulario__img" src="assets/img/logo.png" />
-        <h2 class="formulario__titulo">Login</h2>
-        <div class="formulario__inputs">
-            <div class="input__login">
-                <label for="usuario">Usuário</label>
-                <input
-                    id="usuario"
-                    type="text" 
-                    name="usuario"
-                    formControlName="username"
-                />
+<app-page [incluirCabecalho]="false" [incluirRodape]="false">
+    <main class="container">
+        <form class="formulario" [formGroup]="formulario" (ngSubmit)="fazerLogin()">
+            <img class="formulario__logo" src="assets/img/logo.png" />
+            <h2 class="formulario__titulo">Login</h2>
+            <div class="formulario__campos">
+                <div class="input__login">
+                    <label for="usuario">Usuário</label>
+                    <input
+                        id="usuario"
+                        type="text" 
+                        name="usuario"
+                        formControlName="username"
+                    />
+                    <div class="formulario__erro" *ngIf="mostrarErros('username')">
+                        <span>O campo "Usuário" é obrigatório</span>
+                    </div>
+                </div>
+                <div class="input__login">
+                    <label for="senha">Senha</label>
+                    <input
+                        id="senha"
+                        type="password" 
+                        name="senha"
+                        formControlName="password"
+                        maxlength="8"
+                    />
+                </div>
+                <div class="formulario__erro" *ngIf="mostrarErros('password')">
+                    <span>O campo "Senha" é obrigatório</span>
+                </div>
             </div>
-            <div class="input__login">
-                <label for="senha">Senha</label>
-                <input
-                    id="senha"
-                    type="password" 
-                    name="senha"
-                    formControlName="password"
-                />
-            </div>
-        </div>
-        <input class="botao" type="submit" />
-    </form>
-</div>
+            <button class="formulario__botao" type="submit" [disabled]="!formulario.valid">Confirmar</button>
+        </form>
+    </main>
+</app-page>

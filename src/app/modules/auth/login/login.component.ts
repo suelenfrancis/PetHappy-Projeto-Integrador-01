@@ -18,8 +18,14 @@ export class LoginComponent {
   ) {
     this.formulario = new FormGroup({
       username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
+      password: new FormControl('', Validators.compose([
+        Validators.required
+      ]))
     });
+  }
+
+  public mostrarErros(campo: string): boolean {
+    return (this.formulario.get(campo)?.errors && this.formulario.get(campo)?.touched)!;
   }
 
   public fazerLogin(): void {
