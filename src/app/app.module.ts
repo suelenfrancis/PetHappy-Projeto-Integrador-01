@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './modules/auth/auth.module';
 import { SharedModule } from './modules/shared/shared.module';
+import { FuncionariosModule } from './modules/funcionarios/funcionarios.module';
 
 @NgModule({
   declarations: [
@@ -13,8 +14,9 @@ import { SharedModule } from './modules/shared/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     AuthModule,
-    SharedModule
+    FuncionariosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
