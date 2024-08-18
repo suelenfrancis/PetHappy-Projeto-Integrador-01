@@ -3,7 +3,7 @@ import ITelefone from "./ITelefone";
 
 
 interface IPessoa {
-    id: number | null,
+    id?: number,
     nome: string,
     endereco: IEndereco,
     telefones: ITelefone[]

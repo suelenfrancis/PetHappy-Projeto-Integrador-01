@@ -1,6 +1,7 @@
 interface IUsuario {
-    id: number | null,
+    id?: number,
     username: string,
+    password?: string,
     email: string
 }
 

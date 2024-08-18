@@ -2,7 +2,7 @@ import IPessoa from "./IPessoa";
 import IUsuario from "./IUsuario";
 
 interface IFuncionario {
-    id: number | null,
+    id?: number,
     pessoa: IPessoa,
     usuario: IUsuario
 }

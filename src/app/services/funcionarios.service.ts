@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import IFuncionario from '../interfaces/IFuncionario';
 
 @Injectable({
@@ -14,5 +14,9 @@ export class FuncionariosService {
 
   public obterTodos(): Observable<IFuncionario[]> {
     return this.http.get<IFuncionario[]>(this.API_URL);
+  }
+
+  public cadastrar(funcionario: IFuncionario): Observable<HttpResponse<IFuncionario>> {
+    return this.http.post<IFuncionario>(this.API_URL, funcionario, { observe: 'response' });
   }
 }

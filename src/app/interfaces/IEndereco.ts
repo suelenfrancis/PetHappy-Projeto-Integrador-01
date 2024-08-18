@@ -1,5 +1,5 @@
 interface IEndereco {
-    id: number | null,
+    id?: number,
     cidade: string,
     bairro: string,
     rua: string,

@@ -1,4 +1,5 @@
 import IFuncionario from "../interfaces/IFuncionario";
+import IFuncionarioForm from "../interfaces/IFuncionarioForm";
 import Pessoa from "./Pessoa";
 import Usuario from "./Usuario";
 

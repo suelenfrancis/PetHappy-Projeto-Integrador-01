@@ -1,5 +1,5 @@
 interface ITelefone {
-    id: number | null,
+    id?: number,
     numero: string,
     is_contato_emergencia: boolean
 }
