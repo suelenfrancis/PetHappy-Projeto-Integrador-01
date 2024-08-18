@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageComponent } from './page/page.component';
+import { CampoTextoComponent } from './campo-texto/campo-texto.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -10,15 +12,19 @@ import { PageComponent } from './page/page.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    PageComponent
+    PageComponent,
+    CampoTextoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
-    PageComponent
+    PageComponent,
+    CampoTextoComponent
   ]
 })
 export class SharedModule { }

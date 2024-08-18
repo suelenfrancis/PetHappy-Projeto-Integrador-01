@@ -1,12 +1,22 @@
 <app-page>
     <main class="funcionarios">
-        <a routerLink="/funcionarios/form/">Cadastrar</a>
-        <div class="funcionarios__acoes">
-            <input type="text" />
+        <a routerLink="/funcionarios/form">Cadastrar</a>
+        <div class="funcionarios__filtros">
+            <div class="funcionarios__filtros__nome">
+                <label for="">Filtrar por nome:</label>
+                <input type="text" />
+            </div>
         </div>
-        <div class="cartoes">
+        <div class="cartoes" *ngIf="funcionarios.length > 0, else semFuncionarios">
             <div *ngFor="let funcionario of funcionarios">
+                <span>{{ funcionario.pessoa.nome }}</span>
             </div>
         </div>
     </main>
 </app-page>
+
+<ng-template #semFuncionarios>
+    <div class="sem-funcionarios">
+        <span>Nenhum funcionário encontrado</span>
+    </div>
+</ng-template>

@@ -1,0 +1,16 @@
+<div class="campo-texto">
+    <label class="campo-texto__label" [for]="name">{{ label }}</label>
+    <input
+        [id]="name"
+        [name]="name" 
+        [type]=" isPassword ? 'password' : 'text' "
+        [placeholder]="placeholder"
+        [maxLength]="maxLength"
+        [formControl]="control"
+        class="campo-texto__input"
+        [ngClass]="control.errors && control.touched ? 'campo-texto__input__erro' : ''"
+    >
+    <div class="campo-texto__erros" *ngIf="control.errors && control.touched">
+        <span *ngIf="control.errors['required']">O campo "{{ label }}" é obrigatório</span>
+    </div>
+</div>

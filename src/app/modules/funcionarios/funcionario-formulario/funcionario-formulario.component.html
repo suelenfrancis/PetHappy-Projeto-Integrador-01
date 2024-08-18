@@ -1,1 +1,81 @@
-<p>funcionario-formulario works!</p>
+<main class="container">
+    <form class="formulario" [formGroup]="formularioFuncionario" (ngSubmit)="cadastrar()" >
+        <h2>Cadastrar Funcionário</h2>
+        <app-campo-texto
+            name="nome"
+            label="Nome"
+            placeholder="Nome do funcionário"
+            [control]="obterControle('nome')"
+        />
+        <fieldset>
+            <legend>Endereço</legend>
+            <app-campo-texto
+                name="cidade"
+                label="Cidade"
+                placeholder="Nome da cidade"
+                [control]="obterControle('cidade')"
+            />
+            <app-campo-texto
+                name="bairro"
+                label="Bairro"
+                placeholder="Nome do bairro"
+                [control]="obterControle('bairro')"
+            />
+            <app-campo-texto
+                name="rua"
+                label="Rua"
+                placeholder="Nome da rua"
+                [control]="obterControle('rua')"
+            />
+            <app-campo-texto
+                name="numero"
+                label="Número"
+                placeholder="Número da residência"
+                [control]="obterControle('numero')"
+            />
+        </fieldset>
+        <fieldset>
+            <legend>Contato</legend>
+            <app-campo-texto
+                name="telefone-principal"
+                label="Telefone principal"
+                placeholder="Número do telefone principal"
+                [control]="obterControle('telefonePrincipal')"
+                [maxLength]="15"
+            />
+            <app-campo-texto
+                name="telefone-alternativo"
+                label="Telefone alternativo"
+                placeholder="Número de telefone alternativo"
+                [control]="obterControle('telefoneAlternativo')"
+                [maxLength]="15"
+            />
+        </fieldset>
+        <fieldset>
+            <legend>Cadastro no Sistema</legend>
+            <app-campo-texto
+                name="email"
+                label="E-mail"
+                placeholder="Digite um e-mail válido"
+                [control]="obterControle('email')"
+            />
+            <app-campo-texto
+                name="usuario"
+                label="Usuário"
+                placeholder="Digite o nome do usuário"
+                [control]="obterControle('username')"
+            />
+            <app-campo-texto
+                name="senha"
+                label="Senha"
+                placeholder="Digite uma senha"
+                [control]="obterControle('password')"
+                [maxLength]="8"
+                [isPassword]="true"
+            />
+        </fieldset>
+        <div class="formulario__botaoContainer" >
+            <button type='submit'>Cadastrar Novo Funcionário</button>
+        </div>
+    </form>
+</main>
