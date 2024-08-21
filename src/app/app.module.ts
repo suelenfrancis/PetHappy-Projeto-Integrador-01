@@ -9,6 +9,7 @@ import { FuncionariosModule } from './modules/funcionarios/funcionarios.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     HttpClientModule,
     SharedModule,
     AuthModule,
-    FuncionariosModule
+    FuncionariosModule,
+    BrowserAnimationsModule
   ],
   providers: [
     CookieService,

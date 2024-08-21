@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -20,6 +21,7 @@ import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.co
     RouterModule,
     ReactiveFormsModule,
     SharedModule,
+    MatIconModule,
   ],
   exports: [
     FuncionariosComponent

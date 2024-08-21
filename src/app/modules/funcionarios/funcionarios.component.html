@@ -1,17 +1,24 @@
 <app-page>
     <main class="funcionarios">
-        <a routerLink="/funcionarios/form">Cadastrar</a>
-        <div class="funcionarios__filtros">
-            <div class="funcionarios__filtros__nome">
-                <label for="">Filtrar por nome:</label>
-                <input type="text" />
+        <section class="funcionarios__acoes">
+            <a 
+                class="funcionarios__acoes__botao" 
+                routerLink="/funcionarios/form"
+            >Cadastrar novo funcionário</a>
+        </section>
+        <section class="funcionarios__visualizacao">
+            <div class="funcionarios__visualizacao__filtros">
+                <div class="funcionarios__visualizacao__filtros__nome">
+                    <label for="">Pesquisar por nome</label>
+                    <input type="text" />
+                </div>
             </div>
-        </div>
-        <div class="cartoes" *ngIf="funcionarios.length > 0, else semFuncionarios">
-            <div *ngFor="let funcionario of funcionarios">
-                <app-funcionario-card [funcionario]="funcionario"/>
+            <div class="funcionarios__visualizacao__cartoes" *ngIf="funcionarios.length > 0, else semFuncionarios">
+                <div *ngFor="let funcionario of funcionarios">
+                    <app-funcionario-card [funcionario]="funcionario"/>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 </app-page>
 
