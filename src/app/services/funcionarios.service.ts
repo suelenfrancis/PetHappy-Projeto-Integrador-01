@@ -19,4 +19,16 @@ export class FuncionariosService {
   public cadastrar(funcionario: IFuncionario): Observable<HttpResponse<IFuncionario>> {
     return this.http.post<IFuncionario>(this.API_URL, funcionario, { observe: 'response' });
   }
+
+  public obterPeloId(id: number): Observable<IFuncionario> {
+    return this.http.get<IFuncionario>(`${this.API_URL}${id}`);
+  }
+
+  public atualizar(funcionario: IFuncionario): Observable<HttpResponse<IFuncionario>> {
+    return this.http.put<IFuncionario>(
+      `${this.API_URL}${funcionario.id}/`, 
+      funcionario, 
+      { observe: 'response' }
+    );
+  }
 }

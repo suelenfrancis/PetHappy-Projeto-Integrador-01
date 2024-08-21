@@ -9,7 +9,7 @@
         </div>
         <div class="cartoes" *ngIf="funcionarios.length > 0, else semFuncionarios">
             <div *ngFor="let funcionario of funcionarios">
-                <span>{{ funcionario.pessoa.nome }}</span>
+                <app-funcionario-card [funcionario]="funcionario"/>
             </div>
         </div>
     </main>

@@ -5,13 +5,15 @@ import { FuncionarioFormularioComponent } from './funcionario-formulario/funcion
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
 
 
 
 @NgModule({
   declarations: [
     FuncionariosComponent,
-    FuncionarioFormularioComponent
+    FuncionarioFormularioComponent,
+    FuncionarioCardComponent
   ],
   imports: [
     CommonModule,

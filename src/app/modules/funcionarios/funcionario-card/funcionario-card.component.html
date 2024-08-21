@@ -1,0 +1,7 @@
+<div class="cartao" (click)="redirecionaParaAtualizar()">
+    <p class="cartao__nome">{{ funcionario.pessoa.nome }}</p>
+    <p class="cartao__username">{{ funcionario.usuario?.username }}</p>
+    <address>{{ exibirEndereco() }}</address>
+    <p>{{ exibirTelefones() }}</p>
+    <p>{{ funcionario.usuario?.email }}</p>
+</div>

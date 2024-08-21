@@ -18,6 +18,10 @@ const routes: Routes = [
     component: FuncionarioFormularioComponent
   },
   {
+    path: 'funcionarios/:id/form',
+    component: FuncionarioFormularioComponent
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'

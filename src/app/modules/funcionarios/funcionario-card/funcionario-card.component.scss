@@ -1,0 +1,27 @@
+.cartao {
+    display: flex;
+    width: 29%;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #694520;
+    color: #f5f5f5;
+    align-items: flex-start;
+    
+    &:hover {
+        cursor: pointer;
+        box-shadow: 3px 3px 3px 3px lightgray;
+        transition: box-shadow 0.25s;
+    }
+
+    &__nome {
+        font-weight: 700;
+    }
+
+    &__username {
+        font-size: 0.8rem;
+    }
+}
+
+
