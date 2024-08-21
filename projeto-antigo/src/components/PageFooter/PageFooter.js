@@ -1,0 +1,13 @@
+import style from './PageFooter.module.css';
+
+function PageFooter() {
+    return (
+        <footer>
+            <div className={ style.rodape }>
+                <p>&copy; 2024 - Todos os direitos reservados</p>
+            </div>
+        </footer>
+    );
+}
+
+export default PageFooter;

@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #ffffff;
+    padding: 2.5% 5%;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    
+    &__logo {
+        width: 70%;
+    }
+
+    &__titulo {
+        font-size: 1.5rem;
+        color: var(--cor-primaria);
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    &__campos {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        & .input__login {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+
+            & input {
+                padding: 10px;
+                border: 1px solid #cccccc;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    &__erro {
+        color: red;
+        font-size: 0.8rem;
+    }
+
+    &__botao {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        margin-top: 1rem;
+
+        &:disabled {
+            cursor: default;
+            background-color: #808080;
+            opacity: 0.2;
+        }
+    }
+}

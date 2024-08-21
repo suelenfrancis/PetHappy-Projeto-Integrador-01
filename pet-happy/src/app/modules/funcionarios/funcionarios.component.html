@@ -1,0 +1,29 @@
+<app-page>
+    <main class="funcionarios">
+        <section class="funcionarios__acoes">
+            <a 
+                class="funcionarios__acoes__botao" 
+                routerLink="/funcionarios/form"
+            >Cadastrar novo funcionário</a>
+        </section>
+        <section class="funcionarios__visualizacao">
+            <div class="funcionarios__visualizacao__filtros">
+                <div class="funcionarios__visualizacao__filtros__nome">
+                    <label for="">Pesquisar por nome</label>
+                    <input type="text" />
+                </div>
+            </div>
+            <div class="funcionarios__visualizacao__cartoes" *ngIf="funcionarios.length > 0, else semFuncionarios">
+                <div *ngFor="let funcionario of funcionarios">
+                    <app-funcionario-card [funcionario]="funcionario"/>
+                </div>
+            </div>
+        </section>
+    </main>
+</app-page>
+
+<ng-template #semFuncionarios>
+    <div class="sem-funcionarios">
+        <span>Nenhum funcionário encontrado</span>
+    </div>
+</ng-template>

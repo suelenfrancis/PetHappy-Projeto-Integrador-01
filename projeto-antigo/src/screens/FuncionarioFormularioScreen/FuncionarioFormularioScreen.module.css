@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    width: 50%;
+}
+
+.formulario h2 {
+    font-size: 1.5rem;
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.formulario fieldset {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding: 1rem 0.5rem;
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 1rem;
+    gap: 1rem;
+}
+
+.formulario__botaoContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.formulario__botaoContainer button {
+    padding: 0.8rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.formulario__botaoContainer button:hover {
+    cursor: pointer;
+}
