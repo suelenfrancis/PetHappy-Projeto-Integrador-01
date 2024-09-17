@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PageComponent } from './page/page.component';
 import { CampoTextoComponent } from './campo-texto/campo-texto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -18,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   exports: [
     HeaderComponent,

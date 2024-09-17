@@ -3,11 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './modules/auth/login/login.component';
 import { FuncionariosComponent } from './modules/funcionarios/funcionarios.component';
 import { FuncionarioFormularioComponent } from './modules/funcionarios/funcionario-formulario/funcionario-formulario.component';
+import { HomeComponent } from './modules/home/home.component';
 
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'funcionarios',
@@ -23,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full'
   }
 ];

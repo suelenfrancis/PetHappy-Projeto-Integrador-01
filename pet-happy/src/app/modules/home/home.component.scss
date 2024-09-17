@@ -1,0 +1,31 @@
+.menu-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: var(--cor-primaria);
+        color: var(--cor-secundaria);
+        padding: 1rem 0.5rem;
+        border-radius: 1rem;
+        min-width: 22%;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        text-decoration: none;
+        
+        & h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        &:hover {
+            opacity: 0.9;
+            box-shadow: 3px 3px 3px #808080;
+        }
+    }
+}
