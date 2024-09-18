@@ -1,0 +1,28 @@
+<div class="listagem">
+    <section class="listagem__acoes">
+        <a 
+            class="listagem__acoes__botao" 
+            [routerLink]="gerarLinkParaCadastro()"
+        >{{ gerarMsgBotaoCadastro() }}</a>
+    </section>
+    <section class="listagem__visualizacao">
+        <div class="listagem__visualizacao__filtros">
+            <div class="listagem__visualizacao__filtros__nome">
+                <label for="">Pesquisar por nome</label>
+                <input type="text" />
+            </div>
+        </div>
+        <ng-container #container></ng-container>
+        <div 
+            class="listagem__visualizacao__cartoes" 
+            *ngIf="itens.length > 0, else semItens"
+        >
+        </div>
+    </section>
+</div>
+
+<ng-template #semItens>
+    <div class="sem-itens">
+        <span>{{ gerarMsgSemItens() }}</span>
+    </div>
+</ng-template>

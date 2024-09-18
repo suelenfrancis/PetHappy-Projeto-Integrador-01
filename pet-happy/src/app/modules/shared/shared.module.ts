@@ -6,6 +6,8 @@ import { PageComponent } from './page/page.component';
 import { CampoTextoComponent } from './campo-texto/campo-texto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { ListagemComponent } from './listagem/listagem.component';
+import { ClientesModule } from '../clientes/clientes.module';
 
 
 
@@ -14,7 +16,8 @@ import { RouterLink } from '@angular/router';
     HeaderComponent,
     FooterComponent,
     PageComponent,
-    CampoTextoComponent
+    CampoTextoComponent,
+    ListagemComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +29,8 @@ import { RouterLink } from '@angular/router';
     HeaderComponent,
     FooterComponent,
     PageComponent,
-    CampoTextoComponent
+    CampoTextoComponent,
+    ListagemComponent
   ]
 })
 export class SharedModule { }
