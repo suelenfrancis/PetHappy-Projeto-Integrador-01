@@ -11,6 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './modules/home/home.module';
+import { ClientesModule } from './modules/clientes/clientes.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { HomeModule } from './modules/home/home.module';
     AuthModule,
     FuncionariosModule,
     HomeModule,
+    ClientesModule,
     BrowserAnimationsModule
   ],
   providers: [
