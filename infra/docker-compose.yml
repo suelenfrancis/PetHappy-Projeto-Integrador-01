@@ -1,0 +1,8 @@
+version: '3'
+services:
+  pet-happy:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+    ports:
+      - "4200:80"
