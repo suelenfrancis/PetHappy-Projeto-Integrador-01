@@ -3,23 +3,23 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'login',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  },
-  {
     path: 'home',
     redirectTo: '/home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'funcionarios',
     redirectTo: '/funcionarios',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'clientes',
     redirectTo: '/clientes',
+    pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
