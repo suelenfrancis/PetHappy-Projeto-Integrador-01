@@ -31,11 +31,11 @@ import { ClientesModule } from './modules/clientes/clientes.module';
   ],
   providers: [
     CookieService,
-/*    {
+    {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }*/
+    }
   ],
   bootstrap: [AppComponent]
 })

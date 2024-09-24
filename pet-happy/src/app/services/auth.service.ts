@@ -30,6 +30,10 @@ export class AuthService {
       );
   }
 
+  public estaAutenticado(): boolean {
+    return this.tokenService.possuiToken();
+  }
+
   public logout(): void {
     this.tokenService.remover();
   }

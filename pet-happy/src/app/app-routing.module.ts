@@ -1,35 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './modules/auth/login/login.component';
-import { FuncionariosComponent } from './modules/funcionarios/funcionarios.component';
-import { FuncionarioFormularioComponent } from './modules/funcionarios/funcionario-formulario/funcionario-formulario.component';
-import { HomeComponent } from './modules/home/home.component';
-import { ClientesComponent } from './modules/clientes/clientes.component';
 
 const routes: Routes = [
   {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
     path: 'home',
-    component: HomeComponent
+    redirectTo: '/home',
+    pathMatch: 'full',
   },
   {
     path: 'funcionarios',
-    component: FuncionariosComponent
-  },
-  {
-    path: 'funcionarios/form',
-    component: FuncionarioFormularioComponent
-  },
-  {
-    path: 'funcionarios/:id/form',
-    component: FuncionarioFormularioComponent
+    redirectTo: '/funcionarios',
+    pathMatch: 'full',
   },
   {
     path: 'clientes',
-    component: ClientesComponent
+    redirectTo: '/clientes',
+    pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    redirectTo: '/login',
+    pathMatch: 'full'
   },
   {
     path: '',

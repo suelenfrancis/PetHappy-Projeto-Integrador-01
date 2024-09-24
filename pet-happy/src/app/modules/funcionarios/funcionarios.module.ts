@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
 import {MatIconModule} from '@angular/material/icon';
+import { FuncionariosRoutingModule } from './funcionarios-routing.module';
 
 
 
@@ -18,7 +19,7 @@ import {MatIconModule} from '@angular/material/icon';
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    FuncionariosRoutingModule,
     ReactiveFormsModule,
     SharedModule,
     MatIconModule,
