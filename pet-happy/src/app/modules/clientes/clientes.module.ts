@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import { RouterLink, RouterModule } from '@angular/router';
 import { ClienteCardComponent } from './cliente-card/cliente-card.component';
 import { MatIconModule } from '@angular/material/icon';
+import { ClientesRoutingModule } from './clientes-routing.module';
 
 
 
@@ -15,8 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   imports: [
     CommonModule,
+    ClientesRoutingModule,
     SharedModule,
-    RouterLink,
     MatIconModule,
   ],
   exports: [
