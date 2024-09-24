@@ -2,13 +2,14 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import IFuncionario from '../interfaces/IFuncionario';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FuncionariosService {
 
-  private readonly API_URL = 'http://localhost:8000/funcionarios/';
+  private readonly API_URL = `${environment.API_BASE_URL}/funcionarios/`;
 
   constructor(private http: HttpClient) { }
 

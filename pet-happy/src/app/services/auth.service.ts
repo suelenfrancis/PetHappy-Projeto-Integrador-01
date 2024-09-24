@@ -4,6 +4,7 @@ import { Observable, tap } from 'rxjs';
 import IAutenticacao from '../interfaces/IAutenticacao';
 import IToken from '../interfaces/IToken';
 import { TokenService } from './token.service';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ import { TokenService } from './token.service';
 })
 export class AuthService {
 
-  private readonly API_URL: string = 'http://localhost:8000/token/';
+  private readonly API_URL: string = `${environment.API_BASE_URL}/token/`;
 
   constructor(
     private http: HttpClient, 
