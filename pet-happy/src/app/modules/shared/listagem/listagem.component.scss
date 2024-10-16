@@ -49,8 +49,12 @@
         }
         &__cartoes {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
             padding: 1rem 0;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
         }
     }
 }

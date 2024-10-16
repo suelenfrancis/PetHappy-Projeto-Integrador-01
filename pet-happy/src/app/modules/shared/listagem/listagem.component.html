@@ -12,10 +12,11 @@
                 <input type="text" />
             </div>
         </div>
-        <ng-container #container></ng-container>
+        <div class="listagem__visualizacao__cartoes">
+            <ng-container #container></ng-container>
+        </div>
         <div 
-            class="listagem__visualizacao__cartoes" 
-            *ngIf="itens.length > 0, else semItens"
+        *ngIf="itens.length > 0, else semItens"
         >
         </div>
     </section>

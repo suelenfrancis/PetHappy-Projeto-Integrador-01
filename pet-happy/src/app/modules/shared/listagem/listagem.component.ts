@@ -2,6 +2,7 @@ import { Component, ComponentFactoryResolver, Injector, Input, OnChanges, OnInit
 import IService from 'src/app/interfaces/IService';
 import { ClientesService } from 'src/app/services/clientes.service';
 import { ClienteCardComponent } from '../../clientes/cliente-card/cliente-card.component';
+import { FuncionariosService } from 'src/app/services/funcionarios.service';
 
 @Component({
   selector: 'app-listagem',
@@ -23,7 +24,7 @@ export class ListagemComponent implements OnInit {
     this.obterServico();
     this.service?.obterTodos()
     .subscribe({
-      next: itens => this.itens = itens,
+      next: response => this.itens = response.results,
       complete: () => this.renderizaItens()
     });
   }
@@ -31,6 +32,9 @@ export class ListagemComponent implements OnInit {
   private obterServico() {
     if(this.recurso == 'clientes') {
       this.service = <ClientesService>this.injector.get(ClientesService);
+    } 
+    else if (this.recurso == 'funcionarios') {
+      this.service = <FuncionariosService>this.injector.get(FuncionariosService);
     }
   }
 
@@ -38,9 +42,7 @@ export class ListagemComponent implements OnInit {
     this.container.clear();
     this.itens.forEach(item => {
       const componentRef = this.container.createComponent(this.cartao);
-      if(componentRef.instance instanceof ClienteCardComponent) {
-        componentRef.instance.cliente = item;
-      }
+      componentRef.instance.dados = item;
     });
   }
 

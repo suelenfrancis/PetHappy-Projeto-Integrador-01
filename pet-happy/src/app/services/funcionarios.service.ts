@@ -3,18 +3,20 @@ import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import IFuncionario from '../interfaces/IFuncionario';
 import { environment } from 'src/environments/environment';
+import IService from '../interfaces/IService';
+import IResponsePaginada from '../interfaces/IResponsePaginada';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FuncionariosService {
+export class FuncionariosService implements IService {
 
   private readonly API_URL = `${environment.API_BASE_URL}/funcionarios/`;
 
   constructor(private http: HttpClient) { }
 
-  public obterTodos(): Observable<IFuncionario[]> {
-    return this.http.get<IFuncionario[]>(this.API_URL);
+  public obterTodos(): Observable<IResponsePaginada<IFuncionario>> {
+    return this.http.get<IResponsePaginada<IFuncionario>>(this.API_URL);
   }
 
   public cadastrar(funcionario: IFuncionario): Observable<HttpResponse<IFuncionario>> {
