@@ -9,20 +9,20 @@ import IFuncionario from 'src/app/interfaces/IFuncionario';
 })
 export class FuncionarioCardComponent {
   
-  @Input() funcionario!: IFuncionario;
+  @Input() dados!: IFuncionario;
 
   constructor(private router: Router) {}
 
   public exibirEndereco() {
-    const endereco = this.funcionario.pessoa.endereco;
+    const endereco = this.dados.pessoa.endereco;
     return `${endereco.rua} ${endereco.numero} (${endereco.bairro})`;
   }
 
   public exibirTelefones() {
-    return this.funcionario.pessoa.telefones.map(tel => tel.numero);
+    return this.dados.pessoa.telefones.map(tel => tel.numero);
   }
 
   public redirecionaParaAtualizar() {
-    this.router.navigate([`/funcionarios/${this.funcionario.id}/form`]);
+    this.router.navigate([`/funcionarios/${this.dados.id}/form`]);
   }
 }

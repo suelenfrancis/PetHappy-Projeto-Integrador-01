@@ -9,20 +9,20 @@ import ICliente from 'src/app/interfaces/ICliente';
 })
 export class ClienteCardComponent {
   
-  @Input() cliente!: ICliente;
+  @Input() dados!: ICliente;
 
   constructor(private router: Router){}
 
   public exibirEndereco() {
-    const endereco = this.cliente.pessoa.endereco;
+    const endereco = this.dados.pessoa.endereco;
     return `${endereco.rua} ${endereco.numero} (${endereco.bairro})`;
   }
 
   public exibirTelefones() {
-    return this.cliente.pessoa.telefones.map(tel => tel.numero);
+    return this.dados.pessoa.telefones.map(tel => tel.numero);
   }
 
   public redirecionaParaAtualizar() {
-    this.router.navigate([`/clientes/${this.cliente.id}/form`]);
+    this.router.navigate([`/clientes/${this.dados.id}/form`]);
   }
 }
