@@ -1,0 +1,68 @@
+<main class="container">
+    <form 
+        class="formulario" 
+        [formGroup]="formularioCliente" 
+        (ngSubmit)="cadastrarOuAtualizarCliente()" 
+    >
+        <h2>{{ exibirTitulo() }}</h2>
+        <app-campo-texto
+            name="nome"
+            label="Nome"
+            placeholder="Nome do funcionário"
+            [control]="obterControle('nome')"
+        />
+        <fieldset>
+            <legend>Endereço</legend>
+            <app-campo-texto
+                name="cidade"
+                label="Cidade"
+                placeholder="Nome da cidade"
+                [control]="obterControle('cidade')"
+            />
+            <app-campo-texto
+                name="bairro"
+                label="Bairro"
+                placeholder="Nome do bairro"
+                [control]="obterControle('bairro')"
+            />
+            <app-campo-texto
+                name="rua"
+                label="Rua"
+                placeholder="Nome da rua"
+                [control]="obterControle('rua')"
+            />
+            <app-campo-texto
+                name="numero"
+                label="Número"
+                placeholder="Número da residência"
+                [control]="obterControle('numero')"
+            />
+            <app-campo-texto
+                name="complemento"
+                label="Complemento"
+                placeholder="Complemento do endereço"
+                [control]="obterControle('complemento')"
+            />
+        </fieldset>
+        <fieldset>
+            <legend>Contato</legend>
+            <app-campo-texto
+                name="telefone-principal"
+                label="Telefone principal"
+                placeholder="Número do telefone principal"
+                [control]="obterControle('telefonePrincipal')"
+                [maxLength]="15"
+            />
+            <app-campo-texto
+                name="telefone-alternativo"
+                label="Telefone alternativo"
+                placeholder="Número de telefone alternativo"
+                [control]="obterControle('telefoneAlternativo')"
+                [maxLength]="15"
+            />
+        </fieldset>
+        <div class="formulario__botaoContainer" >
+            <button type='submit' [disabled]="desabilitaBotao()">{{ exibirTextoBotao() }}</button>
+        </div>
+    </form>
+</main>
