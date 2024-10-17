@@ -8,6 +8,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { ListagemComponent } from './listagem/listagem.component';
 import { ClientesModule } from '../clientes/clientes.module';
+import { DatePickerComponent } from './date-picker/date-picker.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -17,20 +24,34 @@ import { ClientesModule } from '../clientes/clientes.module';
     FooterComponent,
     PageComponent,
     CampoTextoComponent,
-    ListagemComponent
+    ListagemComponent,
+    DatePickerComponent,
+    DropdownComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterLink
+    RouterLink,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     PageComponent,
     CampoTextoComponent,
-    ListagemComponent
+    ListagemComponent,
+    DatePickerComponent,
+  ],
+  providers: [
+    {
+      provide: MAT_DATE_LOCALE,
+      useValue: 'pt-BR'
+    },
   ]
 })
 export class SharedModule { }
