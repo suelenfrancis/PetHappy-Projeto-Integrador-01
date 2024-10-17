@@ -22,4 +22,17 @@ export class ClientesService implements IService {
   public cadastrar(cliente: ICliente): Observable<HttpResponse<ICliente>> {
     return this.http.post<ICliente>(this.API_URL, cliente, { observe: 'response' });
   }
+
+  public obterPeloId(id: number): Observable<ICliente> {
+    return this.http.get<ICliente>(`${this.API_URL}${id}`);
+  }
+
+  public atualizar(cliente: ICliente): Observable<HttpResponse<ICliente>> {
+    return this.http.put<ICliente>(
+      `${this.API_URL}${cliente.id}/`, 
+      cliente, 
+      { observe: 'response' }
+    );
+  }
+
 }

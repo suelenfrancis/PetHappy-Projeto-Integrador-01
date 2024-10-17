@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { ClientesComponent } from "./clientes.component";
 import { AuthGuard } from "src/app/guards/auth.guard";
+import { ClienteFormularioComponent } from "./cliente-formulario/cliente-formulario.component";
 
 const routes: Routes = [
     {
@@ -11,7 +12,15 @@ const routes: Routes = [
             {
                 path: '',
                 component: ClientesComponent,
-            }
+            },
+            {
+                path: 'form',
+                component: ClienteFormularioComponent
+              },
+              {
+                path: ':id/form',
+                component: ClienteFormularioComponent
+              }
         ]
     },
 ]
