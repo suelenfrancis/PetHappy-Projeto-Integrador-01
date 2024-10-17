@@ -18,6 +18,11 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'pets',
+    redirectTo: '/pets',
+    pathMatch: 'full',
+  },
+  {
     path: 'login',
     redirectTo: '/login',
     pathMatch: 'full'

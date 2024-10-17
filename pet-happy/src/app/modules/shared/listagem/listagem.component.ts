@@ -3,6 +3,7 @@ import IService from 'src/app/interfaces/IService';
 import { ClientesService } from 'src/app/services/clientes.service';
 import { ClienteCardComponent } from '../../clientes/cliente-card/cliente-card.component';
 import { FuncionariosService } from 'src/app/services/funcionarios.service';
+import { PetsService } from 'src/app/services/pets.service';
 
 @Component({
   selector: 'app-listagem',
@@ -35,6 +36,9 @@ export class ListagemComponent implements OnInit {
     } 
     else if (this.recurso == 'funcionarios') {
       this.service = <FuncionariosService>this.injector.get(FuncionariosService);
+    }
+    else if (this.recurso == 'pets') {
+      this.service = <PetsService>this.injector.get(PetsService);
     }
   }
 
