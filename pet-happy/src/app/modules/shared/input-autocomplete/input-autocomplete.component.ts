@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { catchError, debounceTime, map, Observable, switchMap, tap, throwError } from 'rxjs';
 import ICliente from 'src/app/interfaces/ICliente';
 import { ClientesService } from 'src/app/services/clientes.service';
 
@@ -11,25 +12,24 @@ import { ClientesService } from 'src/app/services/clientes.service';
 export class InputAutocompleteComponent implements OnInit {
   
   @Input() public label: string = '';
+  @Input() public placeholder: string = '';
   @Input() public control: FormControl = new FormControl();
-  public itens: ICliente[] = [];
-  public temMais: boolean = false;
-
-  constructor(private clientesService: ClientesService) {}
+  public filtrados: Observable<ICliente[]> = new Observable();
+  private readonly INTERVALO: number = 500;
   
-  ngOnInit(): void {
-    this.clientesService.obterTodos().subscribe(
-      response => {
-        this.itens = response.results;
-        this.temMais = response.next != null;
-      }
-    );
-  }
+  constructor(private clientesService: ClientesService) {}
 
-  filtrar() {
-    if(this.control.value.length > 3) {
-      console.log('filtrando...');
-    };
+  ngOnInit(): void {
+    this.filtrados = this.control.valueChanges.pipe(
+      debounceTime(this.INTERVALO),
+      tap(termoBusca => console.log(`Buscando por ${termoBusca} ...`)),
+      switchMap(termoBusca => this.clientesService.obterTodos(termoBusca)),
+      map(response => response.results),
+      catchError(erro => {
+        console.log(erro);
+        return throwError(() => new Error('Ocorreu um erro durante a busca.'))
+      })
+    );
   }
 
   exibirItens(item: ICliente): string {

@@ -1,15 +1,14 @@
 <mat-form-field class="input-autocomplete">
     <mat-label>{{ label }}</mat-label>
     <input 
-      type="text"
-      placeholder="Busque pelo nome ou telefone"
       matInput
+      type="text"
+      [placeholder]="placeholder"
       [formControl]="control"
-      [matAutocomplete]="auto"
-      (input)="filtrar()"     
+      [matAutocomplete]="auto"   
     >
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="exibirItens">
-      <mat-option *ngFor="let item of itens" [value]="item">
+      <mat-option *ngFor="let item of filtrados | async" [value]="item">
         <span>{{ item.pessoa.nome }}</span>
         <small>{{ item.pessoa.telefones[0].numero }}</small>
       </mat-option>
