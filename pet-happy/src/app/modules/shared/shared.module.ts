@@ -7,7 +7,6 @@ import { CampoTextoComponent } from './campo-texto/campo-texto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { ListagemComponent } from './listagem/listagem.component';
-import { ClientesModule } from '../clientes/clientes.module';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
@@ -15,7 +14,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-
+import { ModalComponent } from './modal/modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { InputAutocompleteComponent } from './input-autocomplete/input-autocomplete.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { InputTextoComponent } from './input-texto/input-texto.component';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { MatSelectModule } from '@angular/material/select';
     CampoTextoComponent,
     ListagemComponent,
     DatePickerComponent,
-    DropdownComponent
+    DropdownComponent,
+    ModalComponent,
+    InputAutocompleteComponent,
+    InputTextoComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +43,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule,
+    MatAutocompleteModule
   ],
   exports: [
     HeaderComponent,
@@ -46,6 +54,10 @@ import { MatSelectModule } from '@angular/material/select';
     CampoTextoComponent,
     ListagemComponent,
     DatePickerComponent,
+    DropdownComponent,
+    ModalComponent,
+    InputAutocompleteComponent,
+    InputTextoComponent
   ],
   providers: [
     {

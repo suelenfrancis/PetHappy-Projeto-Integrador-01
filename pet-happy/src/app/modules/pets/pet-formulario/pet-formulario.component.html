@@ -1,1 +1,68 @@
-<p>pet-formulario works!</p>
+<main class="container">
+    <form 
+        class="formulario" 
+        [formGroup]="formularioPet" 
+        (ngSubmit)="cadastrarOuAtualizarPet()" 
+    >
+        <h2>{{ exibirTitulo() }}</h2>
+        <fieldset>
+            <legend>Tutor</legend>
+            <app-input-autocomplete 
+                label="Pesquisar Tutor"
+                [control]="obterControle('tutor')"
+            />
+        </fieldset>
+        <fieldset>
+            <legend>Dados do Pet</legend>
+            <app-input-texto
+                label="Nome do Pet"
+                placeholder="Nome do Pet"
+                [control]="obterControle('nome')"
+            />
+            <div class="formulario__campos-duplos">
+                <app-date-picker 
+                    [control]="obterControle('data_nascimento')"
+                    label="Data de Nascimento"
+                    hint=""
+                />
+                <app-dropdown 
+                    [control]="obterControle('sexo')"
+                    label="Sexo"
+                    [options]="opcoesSexo"
+                />
+            </div>
+            <div class="formulario__campos-duplos">
+                <app-dropdown
+                    [control]="obterControle('categoria_id')"
+                    label="Categoria"
+                    [options]="opcoesCategoria"
+                />
+                <app-dropdown
+                    [control]="obterControle('porte_id')"
+                    label="Porte"
+                    [options]="opcoesPorte"
+                />
+            </div>
+            <app-input-texto
+                label="Raça"
+                placeholder="Raça do Pet"
+                [control]="obterControle('raca')"
+            />
+        </fieldset>
+        <fieldset>
+            <legend>Alimentação</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Medicamentos</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Cuidados Especiais</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Veterinário</legend>
+        </fieldset>
+        <div class="formulario__botaoContainer" >
+            <button type='submit' [disabled]="desabilitaBotao()">{{ exibirTextoBotao() }}</button>
+        </div>
+    </form>
+</main>
