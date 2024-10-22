@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import Sexo from 'src/app/enums/Sexo';
 import IPet from 'src/app/interfaces/IPet';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import { PorteService } from 'src/app/services/porte.service';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { ModalComponent } from '../../shared/modal/modal.component';
-import { InputAutocompleteComponent } from '../../shared/input-autocomplete/input-autocomplete.component';
+import IPetForm from 'src/app/interfaces/IPetForm';
+import { PetsService } from 'src/app/services/pets.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pet-formulario',
@@ -35,8 +34,10 @@ export class PetFormularioComponent implements OnInit {
   public opcoesPorte: any[] = [];
 
   constructor(
+    private petService: PetsService,
     private categoriaService: CategoriaService, 
     private porteService: PorteService,
+    private router: Router,
   ) {
     this.formularioPet = new FormGroup({
       nome: new FormControl('', Validators.required),
@@ -99,7 +100,32 @@ export class PetFormularioComponent implements OnInit {
     return !this.formularioPet.valid;
   }
 
-  private cadastrar() {}
+  private cadastrar() {
+    if(this.formularioPet.valid) {
+      console.log(this.formularioPet.value);
+      const dadosFormulario: IPetForm = this.formularioPet.value;
+      const petCadastro: IPet = {
+        tutor_id: dadosFormulario.tutor.id,
+        nome: dadosFormulario.nome,
+        sexo: dadosFormulario.sexo,
+        data_nascimento: dadosFormulario.data_nascimento,
+        categoria_id: dadosFormulario.categoria_id,
+        porte_id: dadosFormulario.porte_id,
+        raca: dadosFormulario.raca,
+      }
+      this.petService.cadastrar(petCadastro).subscribe({
+        next: (response) => {
+          alert('Pet cadastrado com sucesso!')
+          this.router.navigate(['/pets']);
+        },
+        error: (response) => {
+          if(response.status === 500) {
+            alert('Ocorreu um erro inesperado.');
+          }
+        }
+      });
+    }
+  }
 
   private atualizar() {}
 
