@@ -5,7 +5,7 @@ import { CategoriaService } from 'src/app/services/categoria.service';
 import { PorteService } from 'src/app/services/porte.service';
 import IPetForm from 'src/app/interfaces/IPetForm';
 import { PetsService } from 'src/app/services/pets.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pet-formulario',
@@ -38,6 +38,7 @@ export class PetFormularioComponent implements OnInit {
     private categoriaService: CategoriaService, 
     private porteService: PorteService,
     private router: Router,
+    private activatedRoute: ActivatedRoute,
   ) {
     this.formularioPet = new FormGroup({
       nome: new FormControl('', Validators.required),
@@ -74,6 +75,29 @@ export class PetFormularioComponent implements OnInit {
         )
       )
     );
+    const petId = this.activatedRoute.snapshot.paramMap.get('id');
+    if(petId) {
+      this.petService.obterPeloId(Number(petId)).subscribe({
+        next: (pet) => this.carregarFormularioParaEdicao(pet),
+        error: erro => alert('Ocorreu um erro ao buscar os dados do pet: ' + erro)
+      });
+    }
+  }
+
+  private carregarFormularioParaEdicao(dadosPet: IPet) {
+    this.pet = dadosPet;
+    this.formularioPet.patchValue({
+      nome: dadosPet.nome,
+      data_nascimento: dadosPet.data_nascimento,
+      sexo: dadosPet.sexo,
+      raca: dadosPet.raca,
+      medicamentos: dadosPet.medicamentos,
+      alimentos: dadosPet.alimentos,
+      cuidados_especiais: dadosPet.cuidados_especiais,
+      tutor: dadosPet.tutor,
+      categoria_id: dadosPet.categoria?.id,
+      porte_id: dadosPet.porte?.id,
+    });
   }
 
   public obterControle(formControlName: string): FormControl {
@@ -102,7 +126,6 @@ export class PetFormularioComponent implements OnInit {
 
   private cadastrar() {
     if(this.formularioPet.valid) {
-      console.log(this.formularioPet.value);
       const dadosFormulario: IPetForm = this.formularioPet.value;
       const petCadastro: IPet = {
         tutor_id: dadosFormulario.tutor.id,
@@ -127,7 +150,32 @@ export class PetFormularioComponent implements OnInit {
     }
   }
 
-  private atualizar() {}
+  private atualizar() {
+    if(this.formularioPet.valid) {
+      const dadosFormulario: IPetForm = this.formularioPet.value;
+      const petAtualizar: IPet = {
+        id: this.pet?.id,
+        tutor_id: dadosFormulario.tutor.id,
+        nome: dadosFormulario.nome,
+        sexo: dadosFormulario.sexo,
+        data_nascimento: dadosFormulario.data_nascimento,
+        categoria_id: dadosFormulario.categoria_id,
+        porte_id: dadosFormulario.porte_id,
+        raca: dadosFormulario.raca,
+      }
+      this.petService.atualizar(petAtualizar).subscribe({
+        next: (response) => {
+          alert('Pet atualizado com sucesso!')
+          this.router.navigate(['/pets']);
+        },
+        error: (response) => {
+          if(response.status === 500) {
+            alert('Ocorreu um erro inesperado.');
+          }
+        }
+      });
+    }
+  }
 
   public cadastrarOuAtualizarPet() {
     if(this.pet == null) {

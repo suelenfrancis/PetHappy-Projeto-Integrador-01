@@ -15,11 +15,23 @@ export class PetsService implements IService {
 
   constructor(private http: HttpClient) { }
 
-  obterTodos(): Observable<IResponsePaginada<IPet>> {
+  public obterTodos(): Observable<IResponsePaginada<IPet>> {
     return this.http.get<IResponsePaginada<IPet>>(this.API_URL);
   }
 
-  cadastrar(pet: IPet): Observable<HttpResponse<IPet>> {
+  public cadastrar(pet: IPet): Observable<HttpResponse<IPet>> {
     return this.http.post<IPet>(this.API_URL, pet, { observe: 'response' });
+  }
+
+  public obterPeloId(id: number): Observable<IPet> {
+    return this.http.get<IPet>(`${this.API_URL}${id}`);
+  }
+
+  public atualizar(pet: IPet): Observable<HttpResponse<IPet>> {
+    return this.http.put<IPet>(
+      `${this.API_URL}${pet.id}/`, 
+      pet, 
+      { observe: 'response' }
+    );
   }
 }
