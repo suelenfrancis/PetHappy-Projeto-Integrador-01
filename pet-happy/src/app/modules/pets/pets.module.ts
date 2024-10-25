@@ -11,13 +11,19 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { PetFormularioComponent } from './pet-formulario/pet-formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MultiAlimentosComponent } from './pet-formulario/multi-alimentos/multi-alimentos.component';
+import { AlimentosFormularioComponent } from './pet-formulario/multi-alimentos/alimentos-formulario/alimentos-formulario.component';
+import { AlimentoCardComponent } from './alimento-card/alimento-card.component';
 
 
 @NgModule({
   declarations: [
     PetsComponent,
     PetCardComponent,
-    PetFormularioComponent
+    PetFormularioComponent,
+    MultiAlimentosComponent,
+    AlimentosFormularioComponent,
+    AlimentoCardComponent
   ],
   imports: [
     CommonModule,

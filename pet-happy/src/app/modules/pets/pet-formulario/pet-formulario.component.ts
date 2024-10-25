@@ -96,7 +96,7 @@ export class PetFormularioComponent implements OnInit {
       cuidados_especiais: dadosPet.cuidados_especiais,
       tutor: dadosPet.tutor,
       categoria_id: dadosPet.categoria?.id,
-      porte_id: dadosPet.porte?.id,
+      porte_id: dadosPet.porte?.id
     });
   }
 
@@ -135,6 +135,7 @@ export class PetFormularioComponent implements OnInit {
         categoria_id: dadosFormulario.categoria_id,
         porte_id: dadosFormulario.porte_id,
         raca: dadosFormulario.raca,
+        alimentos: dadosFormulario.alimentos
       }
       this.petService.cadastrar(petCadastro).subscribe({
         next: (response) => {
@@ -162,6 +163,7 @@ export class PetFormularioComponent implements OnInit {
         categoria_id: dadosFormulario.categoria_id,
         porte_id: dadosFormulario.porte_id,
         raca: dadosFormulario.raca,
+        alimentos: dadosFormulario.alimentos
       }
       this.petService.atualizar(petAtualizar).subscribe({
         next: (response) => {

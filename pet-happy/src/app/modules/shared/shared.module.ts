@@ -18,7 +18,9 @@ import { ModalComponent } from './modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { InputAutocompleteComponent } from './input-autocomplete/input-autocomplete.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatIconModule } from '@angular/material/icon';
 import { InputTextoComponent } from './input-texto/input-texto.component';
+import { MultiRegistroComponent } from './multi-registro/multi-registro.component';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { InputTextoComponent } from './input-texto/input-texto.component';
     DropdownComponent,
     ModalComponent,
     InputAutocompleteComponent,
-    InputTextoComponent
+    InputTextoComponent,
+    MultiRegistroComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +48,8 @@ import { InputTextoComponent } from './input-texto/input-texto.component';
     MatInputModule,
     MatSelectModule,
     MatDialogModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatIconModule
   ],
   exports: [
     HeaderComponent,
@@ -57,7 +61,8 @@ import { InputTextoComponent } from './input-texto/input-texto.component';
     DropdownComponent,
     ModalComponent,
     InputAutocompleteComponent,
-    InputTextoComponent
+    InputTextoComponent,
+    MultiRegistroComponent
   ],
   providers: [
     {

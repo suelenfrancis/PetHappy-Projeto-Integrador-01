@@ -1,0 +1,10 @@
+.multi-registro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    &__itens {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
