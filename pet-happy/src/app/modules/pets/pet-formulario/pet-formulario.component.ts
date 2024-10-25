@@ -136,7 +136,8 @@ export class PetFormularioComponent implements OnInit {
         porte_id: dadosFormulario.porte_id,
         raca: dadosFormulario.raca,
         alimentos: dadosFormulario.alimentos,
-        medicamentos: dadosFormulario.medicamentos
+        medicamentos: dadosFormulario.medicamentos,
+        cuidados_especiais: dadosFormulario.cuidados_especiais
       }
       this.petService.cadastrar(petCadastro).subscribe({
         next: (response) => {
@@ -165,7 +166,8 @@ export class PetFormularioComponent implements OnInit {
         porte_id: dadosFormulario.porte_id,
         raca: dadosFormulario.raca,
         alimentos: dadosFormulario.alimentos,
-        medicamentos: dadosFormulario.medicamentos
+        medicamentos: dadosFormulario.medicamentos,
+        cuidados_especiais: dadosFormulario.cuidados_especiais
       }
       this.petService.atualizar(petAtualizar).subscribe({
         next: (response) => {

@@ -17,6 +17,9 @@ import { AlimentoCardComponent } from './alimento-card/alimento-card.component';
 import { MultiMedicamentosComponent } from './pet-formulario/multi-medicamentos/multi-medicamentos.component';
 import { MedicamentosFormularioComponent } from './pet-formulario/multi-medicamentos/medicamentos-formulario/medicamentos-formulario.component';
 import { MedicamentoCardComponent } from './medicamento-card/medicamento-card.component';
+import { MultiCuidadosEspeciaisComponent } from './pet-formulario/multi-cuidados-especiais/multi-cuidados-especiais.component';
+import { CuidadosEspeciaisFormularioComponent } from './pet-formulario/multi-cuidados-especiais/cuidados-especiais-formulario/cuidados-especiais-formulario.component';
+import { CuidadoEspecialCardComponent } from './cuidado-especial-card/cuidado-especial-card.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { MedicamentoCardComponent } from './medicamento-card/medicamento-card.co
     AlimentoCardComponent,
     MultiMedicamentosComponent,
     MedicamentosFormularioComponent,
-    MedicamentoCardComponent
+    MedicamentoCardComponent,
+    MultiCuidadosEspeciaisComponent,
+    CuidadosEspeciaisFormularioComponent,
+    CuidadoEspecialCardComponent
   ],
   imports: [
     CommonModule,

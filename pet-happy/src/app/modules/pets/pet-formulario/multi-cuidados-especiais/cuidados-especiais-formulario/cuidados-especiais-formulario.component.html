@@ -1,0 +1,17 @@
+<app-modal>
+    <form [formGroup]="formularioCuidadosEspeciais" (ngSubmit)="adicionar()">
+        <app-input-texto
+            label="Descrição"
+            placeholder="Ex: Fica ansioso com outros cachorros"
+            [control]="obterControle('descricao')"
+        />
+        <app-dropdown 
+            label="Tipo"
+            [options]="tipoOpcoes"
+            [control]="obterControle('tipo')"
+        />
+        <div>
+            <button type="submit" [disabled]="desabilitarBotao()">Adicionar</button>
+        </div>
+    </form>
+</app-modal>
