@@ -1,0 +1,32 @@
+<app-modal>
+    <form [formGroup]="formularioAlimento" (ngSubmit)="adicionar()">
+        <app-input-texto
+            label="Descrição"
+            placeholder="Nome do alimento"
+            [control]="obterControle('descricao')"
+        />
+        <app-input-texto
+            label="Quantidade"
+            placeholder="Descreva quantidade"
+            [control]="obterControle('quantidade')"
+        />
+        <app-input-texto
+            label="Período"
+            placeholder="Ex: Manhã, tarde ou noite"
+            [control]="obterControle('periodo')"
+        />
+        <app-input-texto
+            label="Local de preferência"
+            placeholder="Descreva o local de preferência"
+            [control]="obterControle('local')"
+        />
+        <app-input-texto
+            label="Observações adicionais"
+            placeholder="Acrescente alguma observação caso deseje"
+            [control]="obterControle('observacoes')"
+        />
+        <div>
+            <button type="submit" [disabled]="desabilitarBotao()">Adicionar</button>
+        </div>
+    </form>
+</app-modal>

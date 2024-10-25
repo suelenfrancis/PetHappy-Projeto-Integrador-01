@@ -1,4 +1,4 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import ICliente from '../interfaces/ICliente';
@@ -15,8 +15,11 @@ export class ClientesService implements IService {
 
   constructor(private http: HttpClient) { }
 
-  public obterTodos(): Observable<IResponsePaginada<ICliente>> {
-    return this.http.get<IResponsePaginada<ICliente>>(this.API_URL);
+  public obterTodos(search = ''): Observable<IResponsePaginada<ICliente>> {
+    const options = search.length > 0 
+      ? { params: new HttpParams().set('search', search) }
+      : {};
+    return this.http.get<IResponsePaginada<ICliente>>(this.API_URL, options);
   }
 
   public cadastrar(cliente: ICliente): Observable<HttpResponse<ICliente>> {

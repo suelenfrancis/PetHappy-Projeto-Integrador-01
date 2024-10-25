@@ -1,0 +1,18 @@
+<div class="cartao" (click)="redirecionaParaAtualizar()">
+    <img 
+        class="cartao__img" 
+        src="https://github.com/defreitasabner.png" 
+        [alt]="dados.nome"
+    >
+    <div class="cartao__conteudo">
+        <h3 class="cartao__nome">{{ dados.nome }}</h3>
+        <div class="cartao__info">
+            <mat-icon fontIcon="home"></mat-icon>
+            <p>{{ dados.categoria?.descricao }}</p>
+        </div>
+        <div class="cartao__info">
+            <mat-icon fontIcon="phone"></mat-icon>
+            <p>{{ dados.tutor?.pessoa?.nome }}</p>
+        </div>
+    </div>
+</div>

@@ -12,6 +12,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './modules/home/home.module';
 import { ClientesModule } from './modules/clientes/clientes.module';
+import { PetsModule } from './modules/pets/pets.module';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ClientesModule } from './modules/clientes/clientes.module';
     FuncionariosModule,
     HomeModule,
     ClientesModule,
+    PetsModule,
     BrowserAnimationsModule
   ],
   providers: [
