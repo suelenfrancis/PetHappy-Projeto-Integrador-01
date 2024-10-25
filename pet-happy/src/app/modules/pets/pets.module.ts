@@ -14,6 +14,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MultiAlimentosComponent } from './pet-formulario/multi-alimentos/multi-alimentos.component';
 import { AlimentosFormularioComponent } from './pet-formulario/multi-alimentos/alimentos-formulario/alimentos-formulario.component';
 import { AlimentoCardComponent } from './alimento-card/alimento-card.component';
+import { MultiMedicamentosComponent } from './pet-formulario/multi-medicamentos/multi-medicamentos.component';
+import { MedicamentosFormularioComponent } from './pet-formulario/multi-medicamentos/medicamentos-formulario/medicamentos-formulario.component';
+import { MedicamentoCardComponent } from './medicamento-card/medicamento-card.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { AlimentoCardComponent } from './alimento-card/alimento-card.component';
     PetFormularioComponent,
     MultiAlimentosComponent,
     AlimentosFormularioComponent,
-    AlimentoCardComponent
+    AlimentoCardComponent,
+    MultiMedicamentosComponent,
+    MedicamentosFormularioComponent,
+    MedicamentoCardComponent
   ],
   imports: [
     CommonModule,

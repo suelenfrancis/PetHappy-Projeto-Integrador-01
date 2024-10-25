@@ -1,0 +1,22 @@
+<app-modal>
+    <form [formGroup]="formularioMedicamento" (ngSubmit)="adicionar()">
+        <app-input-texto
+            label="Nome do medicamento"
+            placeholder="Digite o nome do medicamento"
+            [control]="obterControle('nome')"
+        />
+        <app-input-texto
+            label="Posologia"
+            placeholder="Quantidade de dose e quantas vezes ao dia"
+            [control]="obterControle('posologia')"
+        />
+        <app-input-texto
+            label="Observações"
+            placeholder="Caso queira adicionar alguma informação adicional"
+            [control]="obterControle('observacoes')"
+        />
+        <div>
+            <button type="submit" [disabled]="desabilitarBotao()">Adicionar</button>
+        </div>
+    </form>
+</app-modal>
