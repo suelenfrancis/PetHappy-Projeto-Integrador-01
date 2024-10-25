@@ -98,6 +98,7 @@ export class PetFormularioComponent implements OnInit {
       categoria_id: dadosPet.categoria?.id,
       porte_id: dadosPet.porte?.id
     });
+    console.log(this.formularioPet.value);
   }
 
   public obterControle(formControlName: string): FormControl {

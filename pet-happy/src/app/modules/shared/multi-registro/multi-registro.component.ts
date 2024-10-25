@@ -17,6 +17,7 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class MultiRegistroComponent implements ControlValueAccessor, OnInit {
 
+  @Input() public formControl!: FormControl;
   @Input() public formularioComponente: any = ModalComponent;
   @Input() public cardComponente!: Type<any>;
   @ViewChild('container', { read: ViewContainerRef, static: true }) container!: ViewContainerRef;
@@ -24,7 +25,7 @@ export class MultiRegistroComponent implements ControlValueAccessor, OnInit {
   private disabled: boolean = false;
 
   constructor(private dialog: MatDialog){}
-
+  
   ngOnInit(): void {
     this.renderizaItens();
   }
@@ -34,7 +35,8 @@ export class MultiRegistroComponent implements ControlValueAccessor, OnInit {
   onTouch = () => {}
 
   writeValue(value: any[]): void {
-    this.value = value;
+    this.value = [...value];
+    this.renderizaItens();
   }
 
   registerOnChange(fn: any): void {
@@ -64,7 +66,6 @@ export class MultiRegistroComponent implements ControlValueAccessor, OnInit {
         this.value.push(result);
         this.onChange(this.value);
         this.onTouch();
-        this.renderizaItens();
       }
     });
   }
