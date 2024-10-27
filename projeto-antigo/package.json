@@ -4,14 +4,12 @@
   "description": "Projeto desenvolvido pelos alunos da UNIVESP.",
   "main": "index.html",
   "type": "module",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nookies": "^2.5.2"
-  },
-  "devDependencies": {
+    "nookies": "^2.5.2",
+    "pethappy-projeto-integrador-01": "file:"
   }
 }

@@ -1,3 +1,4 @@
+/*
 .container {
     display: flex;
     justify-content: center;
@@ -15,7 +16,7 @@
     padding: 2.5% 5%;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    
+
     &__logo {
         width: 70%;
     }
@@ -68,3 +69,145 @@
         }
     }
 }
+*/
+/* Estilo para o container principal */
+.container {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #A67356;
+}
+
+/* Estilo para as duas colunas */
+.left-panel {
+  background-color: #F2D8C9; /* Cor de fundo suave */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 903px;
+  height: 1024px;
+  flex-shrink: 0;
+  padding: 20px;
+}
+
+.right-panel {
+  background-color: #EFEFEF; /* Cor de fundo branco */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 537px;
+  height: 1024px;
+  flex-shrink: 0;;
+  padding: 20px;
+}
+
+/* Estilo para o logotipo */
+.logo {
+  width: 606px;
+  height: 633px;
+  flex-shrink: 0;
+  display: block; /* Para que as dimensões funcionem corretamente */
+  margin: 0 auto 20px auto; /* Centraliza e dá espaçamento abaixo */
+}
+
+
+/* Estilo para o título */
+.formulario__titulo {
+  font-size: 44px;
+  font-weight: bold;
+  color: #593515; /* Cor de texto do título */
+  margin-bottom: 40px; /* Margem inferior */
+  font-family: 'Poppins', sans-serif; /* Adiciona a fonte Poppins */
+  text-align: center;
+}
+
+/* Estilo para os campos do formulário */
+.input__login {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+
+/* Estilo para o label dos campos de login */
+.input__login label {
+  font-size: 24px; /* Tamanho da fonte */
+  font-family: 'Poppins', sans-serif; /* Fonte Poppins */
+  font-style: normal; /* Estilo normal */
+  font-weight: 400; /* Peso da fonte */
+  color: #593515; /* Cor do texto das labels */
+  margin-bottom: 5px;
+  display: flex; /* Exibe como flex */
+  height: 36px; /* Altura */
+  align-self: stretch; /* Estica para preencher o espaço disponível */
+}
+
+/* Estilo para os inputs dos campos de login */
+.input__login input {
+  padding: 10px;
+  border: 1px solid #593515; /* Cor padrão da borda */
+  border-radius: 5px;
+  font-size: 24px; /* Tamanho da fonte */
+  font-family: 'Poppins', sans-serif; /* Fonte Poppins */
+  font-style: normal; /* Estilo normal */
+  font-weight: 400; /* Peso da fonte */
+  line-height: normal; /* Altura da linha */
+  color: #593515; /* Cor do texto digitado */
+  transition: border-color 0.3s; /* Transição suave na cor da borda */
+}
+
+/* Estilo para o foco (focus) do input */
+.input__login input:focus {
+  outline: none; /* Remove o contorno padrão do navegador */
+  border-color: #A67356; /* Altere para a cor desejada ao focar no campo */
+  box-shadow: 0 0 5px rgba(166, 115, 86, 0.5); /* Adiciona uma sombra leve (opcional) */
+}
+
+/* Estilo para o botão */
+.formulario__botao {
+  display: flex; /* Usar display flex */
+  height: 61px; /* Altura do botão */
+  padding: var(--Space-400, 16px); /* Espaçamento interno com valor de variável, caso não tenha, pode usar um valor fixo */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  gap: 10px; /* Espaçamento entre os itens internos */
+  align-self: stretch; /* Faz o botão ocupar toda a largura disponível */
+  border-radius: 18px; /* Bordas arredondadas */
+  background: #593515; /* Cor de fundo do botão */
+  color: #FFF; /* Cor do texto */
+  border: none; /* Remove a borda padrão */
+  font-family: 'Poppins', sans-serif; /* Define a fonte Poppins */
+  font-size: 24px; /* Tamanho da fonte */
+  font-style: normal; /* Estilo da fonte */
+  font-weight: 400; /* Peso da fonte */
+  line-height: normal; /* Altura da linha */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  transition: background-color 0.3s; /* Transição suave na mudança de cor */
+  width: 100%; /* Garantir que o botão ocupe toda a largura disponível */
+  margin-top: 40px; /* Adiciona espaço acima do botão */
+}
+
+.formulario__botao:hover {
+  background: #7A5B4E; /* Muda a cor do fundo ao passar o mouse (opcional) */
+}
+
+/* Estilo para as mensagens de erro */
+.formulario__erro {
+  margin-top: 0px; /* Margem acima da mensagem de erro */
+}
+
+/* Estilo para as mensagens de erro */
+.formulario__erro span {
+  font-family: 'Poppins', sans-serif; /* Fonte Poppins */
+  color: #A67356; /* Altere esta cor para a que preferir */
+  font-size: 16px; /* Tamanho da fonte */
+}
+
+/* Ajustando o espaço específico para o primeiro campo */
+.input__login:first-of-type .formulario__erro {
+  margin-top: 30px; /* Espaço entre o input e a mensagem de erro do campo de Usuário */
+}
+
