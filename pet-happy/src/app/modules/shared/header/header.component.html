@@ -4,17 +4,8 @@
         </a>
         <nav class="cabecalho__menu-lateral">
             <ul>
-                <li>
-                    <a routerLink="/funcionarios" [ngStyle]="selecionado('funcionarios')">Funcionários</a>
-                </li>
-                <li>
-                    <a routerLink="/clientes" [ngStyle]="selecionado('clientes')">Clientes</a>
-                </li>
-                <li>
-                    <a routerLink="/pets" [ngStyle]="selecionado('pets')">Pets</a>
-                </li>
-                <li>
-                    <a routerLink="/servicos" [ngStyle]="selecionado('servicos')">Serviços</a>
+                <li *ngFor="let item of itensMenuNavegacao">
+                    <a [routerLink]="item.rota" [ngStyle]="selecionado(item.rota)">{{ item.titulo }}</a>
                 </li>
             </ul>
         </nav>

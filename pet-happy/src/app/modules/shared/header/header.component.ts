@@ -1,6 +1,10 @@
-import { ChangeDetectorRef, Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute, ActivationEnd, NavigationEnd, NavigationStart, Router } from '@angular/router';
-import { BehaviorSubject, filter, map, Observable, of, Subject, Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+interface IItemMenuNavegacao {
+  titulo: string,
+  rota: string
+}
 
 @Component({
   selector: 'app-header',
@@ -9,17 +13,35 @@ import { BehaviorSubject, filter, map, Observable, of, Subject, Subscription } f
 })
 export class HeaderComponent implements OnInit {
   
-  public paginaAtual: string = '';
+  public itensMenuNavegacao: IItemMenuNavegacao[] = [
+    {
+      titulo: 'Funcionários',
+      rota: '/funcionarios'
+    },
+    {
+      titulo: 'Clientes',
+      rota: '/clientes'
+    },
+    {
+      titulo: 'Pets',
+      rota: '/pets'
+    },
+    {
+      titulo: 'Serviços',
+      rota: '/servicos'
+    },
+  ];
+  private rotaAtual: string = '';
 
   constructor(private router: Router) {}
   
   ngOnInit(): void {
-    this.paginaAtual = this.router.url.replace('/', '');
+    this.rotaAtual = this.router.url;
   }
 
   public selecionado(item: string) {
-    return this.paginaAtual === item
-      ? {'color': 'var(--selected-menu-item)'}
+    return this.rotaAtual === item
+      ? {'color': 'var(--selected-menu-item)', 'font-weight': '700'}
       : {};
   }
 }
