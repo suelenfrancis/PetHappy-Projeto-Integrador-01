@@ -1,8 +1,21 @@
 <header class="cabecalho">
-        <a routerLink="/">
-            <div class="cabecalho__container">
-                <img class="cabecalho__logo" src="assets/img/logo.jpg" alt="Logo da PetHappy"/>
-                <h1 class="cabecalho__titulo">PetHappy</h1>
-            </div>
+        <a class="cabecalho__logo" routerLink="/">
+            <img src="assets/img/logo2.png" alt="Logo da PetHappy"/>
         </a>
+        <nav class="cabecalho__menu-lateral">
+            <ul>
+                <li>
+                    <a routerLink="/funcionarios" [ngStyle]="selecionado('funcionarios')">Funcionários</a>
+                </li>
+                <li>
+                    <a routerLink="/clientes" [ngStyle]="selecionado('clientes')">Clientes</a>
+                </li>
+                <li>
+                    <a routerLink="/pets" [ngStyle]="selecionado('pets')">Pets</a>
+                </li>
+                <li>
+                    <a routerLink="/servicos" [ngStyle]="selecionado('servicos')">Serviços</a>
+                </li>
+            </ul>
+        </nav>
 </header>
