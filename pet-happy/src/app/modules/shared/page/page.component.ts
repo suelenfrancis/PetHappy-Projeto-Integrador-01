@@ -8,6 +8,4 @@ import { Component, Input } from '@angular/core';
 export class PageComponent {
 
   @Input() incluirCabecalho: boolean = true;
-  @Input() incluirRodape: boolean = true;
-
 }

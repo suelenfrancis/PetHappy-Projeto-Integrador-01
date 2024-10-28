@@ -1,8 +1,12 @@
 <header class="cabecalho">
-        <a routerLink="/">
-            <div class="cabecalho__container">
-                <img class="cabecalho__logo" src="assets/img/logo.jpg" alt="Logo da PetHappy"/>
-                <h1 class="cabecalho__titulo">PetHappy</h1>
-            </div>
+        <a class="cabecalho__logo" routerLink="/">
+            <img src="assets/img/logo2.png" alt="Logo da PetHappy"/>
         </a>
+        <nav class="cabecalho__menu-lateral">
+            <ul>
+                <li *ngFor="let item of itensMenuNavegacao">
+                    <a [routerLink]="item.rota" [ngStyle]="selecionado(item.rota)">{{ item.titulo }}</a>
+                </li>
+            </ul>
+        </nav>
 </header>
