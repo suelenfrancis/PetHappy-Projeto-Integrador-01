@@ -9,14 +9,31 @@
         justify-content: center;
         padding: 1rem;
         &__botao {
-            color: var(--cor-secundaria);
-            background-color: var(--cor-primaria);
-            border-radius: 0.5rem;
-            padding: 1rem;
+            font-family: 'Roboto', sans-serif;
+            color: var(--cor-primaria);
+            background-color: none;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.5rem;
             text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease; 
+            border: none; 
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             &:hover {
+                background-color: #f6d096;
+                box-shadow: 0 6px 12px rgba(74, 144, 226, 0.3);
+                transform: scale(1.05);
                 transition: scale 0.5s;
                 scale: 1.1;
+            }
+            &__acoes__botao:focus {
+                outline: none; 
+                box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2); 
             }
         }
     }
@@ -31,19 +48,48 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: var(--cor-primaria);
-            color: var(--cor-secundaria);
-            padding: 1rem;
-            border-radius: 0.5rem;
+            background-color: #f7f5f2;
+            color: var(--cor-primaria);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             &__nome {
                 display: flex;
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 0.75rem;
                 width: 100%;
                 & input {
-                    padding: 0.5rem;
-                    border-radius: 0.5rem;
-                    border: none;
+                    padding: 0.75rem;
+                    border-radius: 0.75rem;
+                    border: 2px solid #ddd;
+                    font-size: 14px;
+                    color: var(--cor-primaria);
+                    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+                    outline: none;
+                    background-color: #fff;
+             
+
+                }
+
+                input:focus {
+                    border-color: var(--cor-primaria); 
+                    box-shadow: 0 2px 6px rgba(74, 144, 226, 0.3); 
+                }
+
+                input::placeholder {
+                    color: #888; 
+                    font-size: 13px;
+                    font-style: italic;
+                }
+
+                @media (max-width: 768px) {
+                    &__visualizacao {
+                        width: 95%; /* ajusta a largura em telas pequenas */
+                    }
+                
+                    &__filtros {
+                        padding: 1rem;
+                    }
                 }
             }
         }
