@@ -1,3 +1,106 @@
+/* Estiliza o container principal */
+.container {
+  display: flex; /* Flex container para centralizar o conteúdo */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  padding: 1rem 0; /* Espaçamento vertical */
+}
+
+/* Estiliza o botão de fechar */
+.formulario__fechar {
+  display: flex; /* Flex container para centralizar o botão */
+  justify-content: flex-end; /* Alinha o botão à direita */
+  margin-bottom: 1rem; /* Espaço abaixo do botão */
+}
+
+.formulario__fechar button {
+  padding: 0.5rem 1rem; /* Preenchimento do botão */
+  border: none; /* Remove borda padrão */
+  background-color: #d9534f; /* Cor de fundo vermelha */
+  color: #ffffff; /* Texto branco */
+  border-radius: 0.5rem; /* Cantos arredondados */
+  font-size: 1rem; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de ponteiro */
+  transition: background-color 0.3s; /* Transição suave */
+}
+
+.formulario__fechar button:hover {
+  background-color: #c9302c; /* Cor de fundo mais escura no hover */
+}
+
+/* Estiliza o formulário */
+.formulario {
+  display: flex; /* Layout flexível para organizar elementos verticalmente */
+  flex-direction: column; /* Elementos em coluna */
+  padding: 1rem; /* Preenchimento interno */
+  border-radius: 1rem; /* Cantos arredondados */
+  background-color: #ffffff; /* Fundo branco */
+  color: #593515; /* Cor do texto marrom */
+  gap: 1rem; /* Espaçamento entre elementos */
+  width: 100%; /* Utiliza toda a largura disponível */
+  max-width: 1400px; /* Largura máxima do formulário */
+  margin: 0 auto; /* Centraliza o formulário */
+  border: 2px solid #A67356; /* Borda marrom */
+}
+
+/* Estiliza o título h2 dentro do formulário */
+.formulario h2 {
+  font-size: 1.5rem; /* Tamanho da fonte */
+  text-align: right; /* Alinha o título à direita */
+  margin-bottom: 1rem; /* Espaço abaixo do título */
+}
+
+/* Estiliza o fieldset dentro do formulário */
+.formulario fieldset {
+  display: flex; /* Layout flexível para o conteúdo do fieldset */
+  flex-direction: column; /* Conteúdo em coluna */
+  padding: 1rem; /* Preenchimento interno */
+  border: 1px solid #A67356; /* Borda do fieldset */
+  border-radius: 1rem; /* Cantos arredondados */
+}
+
+/* Estiliza uma seção de campos duplos dentro do formulário */
+.formulario__campos-duplos {
+  display: flex; /* Layout flexível para campos duplos */
+  gap: 1rem; /* Espaçamento entre os campos */
+  justify-content: space-between; /* Distribui o espaço */
+}
+
+/* Estiliza o container do botão dentro do formulário */
+.formulario__botaoContainer {
+  display: flex; /* Layout flexível para centralizar o botão */
+  justify-content: center; /* Centraliza o botão */
+  padding-top: 1rem; /* Espaço acima do botão */
+}
+
+/* Estiliza o botão dentro do container do botão */
+.formulario__botaoContainer button {
+  padding: 0.8rem; /* Preenchimento do botão */
+  border-radius: 1rem; /* Cantos arredondados */
+  border: none; /* Remove borda padrão */
+  background-color: #A67356; /* Cor de fundo marrom */
+  color: #ffffff; /* Texto branco */
+  width: 323px; /* Largura fixa */
+  height: 57px; /* Altura fixa */
+  flex-shrink: 0; /* Não encolhe */
+  text-align: center; /* Centraliza texto */
+  font-size: 24px; /* Tamanho da fonte */
+  font-weight: 800; /* Peso da fonte */
+  line-height: normal; /* Altura da linha */
+}
+
+/* Estiliza o efeito hover para o botão */
+.formulario__botaoContainer button:hover {
+  cursor: pointer; /* Cursor de ponteiro */
+  background-color: #8F5B43; /* Cor de fundo mais escura */
+  color: #ffffff; /* Texto branco */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+  transform: scale(1.05); /* Aumenta tamanho do botão */
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Transições suaves */
+}
+
+
+
+/*
 .container {
     display: flex;
     justify-content: center;
@@ -9,7 +112,7 @@
     flex-direction: column;
     padding: 1rem;
     border-radius: 1rem;
-    background-color: var(--cor-primaria);
+    background-color: #ff0000;
     color: var(--cor-secundaria);
     gap: 1rem;
     & h2 {
@@ -40,9 +143,10 @@
             &:hover {
                 cursor: pointer;
             }
-        }        
+        }
     }
 }
+*/
 
 
 
