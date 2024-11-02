@@ -8,14 +8,15 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    border-radius: 1rem;
-    background-color: var(--cor-primaria);
-    color: var(--cor-secundaria);
+    border: 2px solid #593515;
+    border-radius: 10px;
+    background-color: #FFFF;
+    color: #593515;
     width: 50%;
 }
 
 .formulario h2 {
-    font-size: 1.5rem;
+    font-size: 20px;
     text-align: right;
     margin-bottom: 1rem;
 }
@@ -25,7 +26,7 @@
     flex-direction: column;
     margin-top: 1rem;
     padding: 1rem 0.5rem;
-    border: 1px solid var(--cor-secundaria);
+    border: 2px solid #FFF;
     border-radius: 1rem;
     gap: 1rem;
 }
@@ -37,7 +38,12 @@
 }
 
 .formulario__botaoContainer button {
+    color: #FFF;
+    font-weight: 800;
+    font-style: normal;
     padding: 0.8rem;
     border-radius: 1rem;
     border: none;
+    border-radius: 20px;
+    background: #CB7F53;
 }
