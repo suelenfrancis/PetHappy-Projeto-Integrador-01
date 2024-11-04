@@ -4,14 +4,39 @@
     padding: 1rem 0;
 }
 
+.formulario__fechar {
+    display: flex; 
+    justify-content: flex-end; 
+    margin-bottom: 1rem; 
+  }
+
+
+.formulario__fechar button {
+    padding: 0.5rem 1rem; 
+    border: none; 
+    background-color: #d9534f;
+    color: #ffffff; 
+    border-radius: 0.5rem; 
+    font-size: 1rem;
+    cursor: pointer; 
+    transition: background-color 0.3s;
+  }
+
+  .formulario__fechar button:hover {
+    background-color: #c9302c; 
+  }  
+
 .formulario {
     display: flex;
     flex-direction: column;
     padding: 1rem;
     border-radius: 1rem;
-    background-color: var(--cor-primaria);
-    color: var(--cor-secundaria);
+    background-color: #ffffff;
+    color: #593515;
     width: 50%;
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 2px solic #a67356;
 }
 
 .formulario h2 {
@@ -24,8 +49,8 @@
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
-    padding: 1rem 0.5rem;
-    border: 1px solid var(--cor-secundaria);
+    padding: 1rem;
+    border: 1px solid #a67356;
     border-radius: 1rem;
     gap: 1rem;
 }
@@ -40,8 +65,22 @@
     padding: 0.8rem;
     border-radius: 1rem;
     border: none;
+    background-color: #A67356;
+    color: #ffffff; 
+    width: 323px;
+    height: 57px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: normal;
 }
 
 .formulario__botaoContainer button:hover {
     cursor: pointer;
+    background-color: #8F5B43;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }

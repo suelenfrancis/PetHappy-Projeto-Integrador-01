@@ -1,22 +1,33 @@
+<app-page></app-page>
+
 <main class="container">
+    <!--
+  <div class="formulario__fechar">
+    <button (click)="fecharFormulario()">Fechar</button>
+  </div>
+  -->
     <form 
         class="formulario" 
         [formGroup]="formularioFuncionario" 
         (ngSubmit)="cadastrarOuAtualizarFuncionario()" 
     >
-        <h2>{{ exibirTitulo() }}</h2>
-        <app-campo-texto
+        <h2 class="formulario_titulo">{{ exibirTitulo() }}</h2>
+
+        <fieldset class="formulario_fieldset">
+            <legend class="formulario_legend">Nome</legend>
+            <app-campo-texto
             name="nome"
-            label="Nome"
             placeholder="Nome do funcionário"
             [control]="obterControle('nome')"
-        />
-        <fieldset>
-            <legend>Endereço</legend>
+            />
+        </fieldset>
+
+        <fieldset class="formulario_fieldset">
+            <legend class="formulario_legend">Endereço</legend>
             <app-campo-texto
                 name="cidade"
                 label="Cidade"
-                placeholder="Nome da cidade"
+                placeholder="Nome da Cidade"
                 [control]="obterControle('cidade')"
             />
             <app-campo-texto
@@ -44,8 +55,9 @@
                 [control]="obterControle('complemento')"
             />
         </fieldset>
-        <fieldset>
-            <legend>Contato</legend>
+
+        <fieldset class="formulario_fieldset">
+            <legend class="formulario_legend">Contato</legend>
             <app-campo-texto
                 name="telefone-principal"
                 label="Telefone principal"
@@ -61,7 +73,8 @@
                 [maxLength]="15"
             />
         </fieldset>
-        <fieldset *ngIf="isCadastro()">
+
+         <fieldset *ngIf="isCadastro()">
             <legend>Cadastro de Usuário</legend>
             <app-campo-texto
                 name="email"
@@ -84,6 +97,7 @@
                 [isPassword]="true"
             />
         </fieldset>
+
         <div class="formulario__botaoContainer" >
             <button type='submit' [disabled]="desabilitaBotao()">{{ exibirTextoBotao() }}</button>
         </div>
