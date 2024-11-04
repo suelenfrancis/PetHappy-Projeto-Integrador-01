@@ -1,31 +1,29 @@
-.menu-principal {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
+.schedule {
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
 
-    &__item {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        background-color: var(--cor-primaria);
-        color: var(--cor-secundaria);
-        padding: 1rem 0.5rem;
-        border-radius: 1rem;
-        min-width: 22%;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        text-decoration: none;
-        
-        & h2 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-        
-        &:hover {
-            opacity: 0.9;
-            box-shadow: 3px 3px 3px #808080;
-        }
+  h2 {
+    text-align: start;
+    margin-top: 16px;
+    color: #333;
+  }
+
+  .mat-expansion-panel {
+    margin-bottom: 8px;
+
+    .card_agenda {
+      flex-wrap: wrap;
+      display: grid;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: #f5e0d9;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
     }
+  }
+}
+::ng-deep .mat-grid-tile-content {
+  align-items: start !important;
+  justify-content: space-between !important;
+  flex-direction: column !important;
 }

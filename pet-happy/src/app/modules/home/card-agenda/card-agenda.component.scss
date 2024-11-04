@@ -1,0 +1,38 @@
+.card_agenda_structure {
+  padding: 16px;
+  height: 100%;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: start;
+  flex-direction: row;
+  display: inline-block;
+
+  h3 {
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+  }
+
+  p {
+    margin: 4px 0;
+    color: #666;
+  }
+
+  p strong {
+    color: #333;
+  }
+
+  .edit_servico_button {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  .card_agenda_text {
+    justify-content: space-between;
+    height: 100%;
+  }
+}
+

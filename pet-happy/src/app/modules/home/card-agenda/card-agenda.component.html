@@ -1,0 +1,12 @@
+<div class="card_agenda_structure">
+  <div class="card_agenda_text">
+    <h3>{{ cardModel?.nomeServico }}</h3>
+    <p><strong>{{ cardModel?.nomePet }}</strong>, às {{ cardModel?.horarioServico }}</p>
+    <p>Cliente: {{ cardModel?.nomeCliente }}</p>
+    <p>Resp.: {{ cardModel?.nomeFuncionario }}</p>
+  </div>
+  <div>
+    <img src="/assets/img/edit_icon.svg" class="edit_servico_button" (click)="editServico(cardModel)" />
+  </div>
+</div>
+
