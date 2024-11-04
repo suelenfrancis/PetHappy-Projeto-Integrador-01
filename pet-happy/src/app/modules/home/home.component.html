@@ -1,20 +1,69 @@
 <app-page>
-    <div class="menu-principal">
-        <a class="menu-principal__item" routerLink="/funcionarios/">
-            <mat-icon fontIcon="people"></mat-icon>
-            <h2>Funcionários</h2>
-        </a>
-        <a class="menu-principal__item" routerLink="/clientes/">
-            <mat-icon fontIcon="diversity_1"></mat-icon>
-            <h2>Clientes</h2>
-        </a>
-        <a class="menu-principal__item" routerLink="/pets/">
-            <mat-icon fontIcon="pets"></mat-icon>
-            <h2>Pets</h2>
-        </a>
-        <a class="menu-principal__item">
-            <mat-icon fontIcon="money"></mat-icon>
-            <h2>Serviços</h2>
-        </a>
-    </div>
+  <div class="schedule">
+    <h2>Para essa semana...</h2>
+
+    <!-- Expansion Panel for each day -->
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <span>Segunda-feira</span>
+        </mat-expansion-panel-header>
+        <!-- Grid List for the schedule items -->
+        <mat-grid-list  [cols]="gridListCols" gutterSize="16px" rowHeight="200px" class="custom-grid">
+          <mat-grid-tile *ngFor="let item of itens" class="card_agenda">
+            <app-card-agenda [cardModel]="item" />
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-expansion-panel>
+
+      <!-- Repeat for other days -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <span>Terça-feira</span>
+        </mat-expansion-panel-header>
+        <!-- Content for Tuesday -->
+        <mat-grid-list  [cols]="gridListCols" gutterSize="16px" rowHeight="200px" class="custom-grid">
+          <mat-grid-tile *ngFor="let item of itens" class="card_agenda">
+            <app-card-agenda [cardModel]="item" />
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <span>Quarta-feira</span>
+        </mat-expansion-panel-header>
+        <!-- Content for Wednesday -->
+        <mat-grid-list  [cols]="gridListCols" gutterSize="16px" rowHeight="200px" class="custom-grid">
+          <mat-grid-tile *ngFor="let item of itens" class="card_agenda">
+            <app-card-agenda [cardModel]="item" />
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <span>Quinta-feira</span>
+        </mat-expansion-panel-header>
+        <!-- Content for Thursday -->
+        <mat-grid-list  [cols]="gridListCols" gutterSize="16px" rowHeight="200px" class="custom-grid">
+          <mat-grid-tile *ngFor="let item of itens" class="card_agenda">
+            <app-card-agenda [cardModel]="item" />
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <span>Sexta-feira</span>
+        </mat-expansion-panel-header>
+        <!-- Content for Friday -->
+        <mat-grid-list  [cols]="gridListCols" gutterSize="16px" rowHeight="200px" class="custom-grid">
+          <mat-grid-tile *ngFor="let item of itens" class="card_agenda">
+            <app-card-agenda [cardModel]="item" />
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
 </app-page>
