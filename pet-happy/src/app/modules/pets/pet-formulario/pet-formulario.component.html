@@ -1,77 +1,101 @@
+<app-page></app-page>
+
 <main class="container">
-    <form 
-        class="formulario" 
-        [formGroup]="formularioPet" 
-        (ngSubmit)="cadastrarOuAtualizarPet()" 
-    >
-        <h2>{{ exibirTitulo() }}</h2>
-        <fieldset>
-            <legend>Tutor</legend>
-            <app-input-autocomplete 
-                label="Pesquisar Tutor"
-                [control]="obterControle('tutor')"
-            />
-        </fieldset>
-        <fieldset>
-            <legend>Dados do Pet</legend>
-            <app-input-texto
-                label="Nome do Pet"
-                placeholder="Nome do Pet"
-                [control]="obterControle('nome')"
-            />
-            <div class="formulario__campos-duplos">
-                <app-date-picker 
-                    [control]="obterControle('data_nascimento')"
-                    label="Data de Nascimento"
-                    hint=""
-                />
-                <app-dropdown 
-                    [control]="obterControle('sexo')"
-                    label="Sexo"
-                    [options]="opcoesSexo"
-                />
-            </div>
-            <div class="formulario__campos-duplos">
-                <app-dropdown
-                    [control]="obterControle('categoria_id')"
-                    label="Categoria"
-                    [options]="opcoesCategoria"
-                />
-                <app-dropdown
-                    [control]="obterControle('porte_id')"
-                    label="Porte"
-                    [options]="opcoesPorte"
-                />
-            </div>
-            <app-input-texto
-                label="Raça"
-                placeholder="Raça do Pet"
-                [control]="obterControle('raca')"
-            />
-        </fieldset>
-        <fieldset>
-            <legend>Alimentação</legend>
-            <app-multi-alimentos
-                [control]="obterControle('alimentos')"
-            />
-        </fieldset>
-        <fieldset>
-            <legend>Medicamentos</legend>
-            <app-multi-medicamentos
-                [control]="obterControle('medicamentos')"
-            />
-        </fieldset>
-        <fieldset>
-            <legend>Cuidados Especiais</legend>
-            <app-multi-cuidados-especiais
-                [control]="obterControle('cuidados_especiais')"
-            />
-        </fieldset>
-        <fieldset>
-            <legend>Veterinário</legend>
-        </fieldset>
-        <div class="formulario__botaoContainer" >
-            <button type='submit' [disabled]="desabilitaBotao()">{{ exibirTextoBotao() }}</button>
-        </div>
-    </form>
+  <!--
+  <div class="formulario__fechar">
+    <button (click)="fecharFormulario()">Fechar</button>
+  </div>
+  -->
+  <form
+      class="formulario"
+      [formGroup]="formularioPet"
+      (ngSubmit)="cadastrarOuAtualizarPet()"
+  >
+      <h2 class="formulario__titulo">{{ exibirTitulo() }}</h2>
+
+      <!-- Tutor Section -->
+      <fieldset class="formulario__fieldset">
+          <legend class="formulario__legend">Tutor</legend>
+          <app-input-autocomplete
+              label="Pesquisar Tutor"
+              [control]="obterControle('tutor')"
+          />
+      </fieldset>
+
+      <!-- Pet Data Section -->
+      <fieldset class="formulario__fieldset">
+          <legend class="formulario__legend">Dados do Pet</legend>
+          <app-input-texto
+              label="Nome do Pet"
+              placeholder="Nome do Pet"
+              [control]="obterControle('nome')"
+          />
+          <div class="formulario__campos-duplos">
+              <app-date-picker
+                  [control]="obterControle('data_nascimento')"
+                  label="Data de Nascimento"
+              />
+              <app-dropdown
+                  [control]="obterControle('sexo')"
+                  label="Sexo"
+                  [options]="opcoesSexo"
+              />
+          </div>
+          <div class="formulario__campos-duplos">
+              <app-dropdown
+                  [control]="obterControle('categoria_id')"
+                  label="Categoria"
+                  [options]="opcoesCategoria"
+              />
+              <app-dropdown
+                  [control]="obterControle('porte_id')"
+                  label="Porte"
+                  [options]="opcoesPorte"
+              />
+          </div>
+          <app-input-texto
+              label="Raça"
+              placeholder="Raça do Pet"
+              [control]="obterControle('raca')"
+          />
+      </fieldset>
+
+      <!-- Feeding Section -->
+      <fieldset class="formulario__fieldset">
+          <legend class="formulario__legend">Alimentação</legend>
+          <app-multi-alimentos
+              [control]="obterControle('alimentos')"
+          />
+      </fieldset>
+
+      <!-- Medications Section -->
+      <fieldset class="formulario__fieldset">
+          <legend class="formulario__legend">Medicamentos</legend>
+          <app-multi-medicamentos
+              [control]="obterControle('medicamentos')"
+          />
+      </fieldset>
+
+      <!-- Special Care Section -->
+      <fieldset class="formulario__fieldset">
+          <legend class="formulario__legend">Cuidados Especiais</legend>
+          <app-multi-cuidados-especiais
+              [control]="obterControle('cuidados_especiais')"
+          />
+      </fieldset>
+
+      <!-- Veterinarian Section -->
+      <fieldset class="formulario__fieldset">
+          <legend class="formulario__legend">Veterinário</legend>
+          <!-- Adicione componentes relacionados ao veterinário, se necessário -->
+      </fieldset>
+
+      <div class="formulario__botaoContainer">
+          <button type='submit' [disabled]="desabilitaBotao()">{{ exibirTextoBotao() }}</button>
+      </div>
+  </form>
 </main>
+
+
+
+
