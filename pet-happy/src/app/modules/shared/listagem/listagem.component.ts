@@ -1,16 +1,18 @@
-import { Component, ComponentFactoryResolver, Injector, Input, OnChanges, OnInit, SimpleChanges, TemplateRef, Type, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, Injector, Input, OnDestroy, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import IService from 'src/app/interfaces/IService';
 import { ClientesService } from 'src/app/services/clientes.service';
-import { ClienteCardComponent } from '../../clientes/cliente-card/cliente-card.component';
 import { FuncionariosService } from 'src/app/services/funcionarios.service';
 import { PetsService } from 'src/app/services/pets.service';
+import { PageEvent } from '@angular/material/paginator';
+import { FormControl } from '@angular/forms';
+import { debounceTime, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-listagem',
   templateUrl: './listagem.component.html',
   styleUrls: ['./listagem.component.scss']
 })
-export class ListagemComponent implements OnInit {
+export class ListagemComponent implements OnInit, OnDestroy {
   
   @Input() recurso!: 'funcionarios' | 'clientes' | 'pets' | 'servicos';
   @Input() modelo!: 'funcionários' | 'clientes' | 'pets' | 'serviços';
@@ -18,16 +20,30 @@ export class ListagemComponent implements OnInit {
   @ViewChild('container', { read: ViewContainerRef, static: true }) container!: ViewContainerRef;
   itens: any[] = [];
   private service?: IService;
+  indiceAtual: number = 0;
+  totalRegistros: number = 30;
+  tamanhoPagina: number = 10;
+  buscaControl = new FormControl('');
+  INTERVALO = 500;
+  serviceSubs?: Subscription;
+  buscaSubs?: Subscription;
   
   constructor(private injector: Injector) {}
   
   ngOnInit(): void {
     this.obterServico();
-    this.service?.obterTodos()
-    .subscribe({
-      next: response => this.itens = response.results,
-      complete: () => this.renderizaItens()
+    this.buscarItens();
+    this.buscaSubs = this.buscaControl.valueChanges.pipe(
+      debounceTime(this.INTERVALO)
+    ).subscribe( _ => {
+      this.indiceAtual = 0;
+      this.buscarItens();
     });
+  }
+
+  ngOnDestroy(): void {
+    this.buscaSubs?.unsubscribe();
+    this.serviceSubs?.unsubscribe();
   }
   
   private obterServico() {
@@ -50,6 +66,17 @@ export class ListagemComponent implements OnInit {
     });
   }
 
+  private buscarItens() {
+    this.serviceSubs = this.service?.obterTodos(this.buscaControl.value ?? '', this.indiceAtual + 1)
+    .subscribe({
+      next: response => {
+        this.itens = response.results;
+        this.totalRegistros = response.count;
+      },
+      complete: () => this.renderizaItens()
+    });
+  }
+
   public gerarLinkParaCadastro() {
     return `/${this.recurso}/form/`;
   }
@@ -62,5 +89,9 @@ export class ListagemComponent implements OnInit {
     return `Nenhum ${this.modelo} cadastrado`;
   }
 
+  public eventoMudouPagina(evento: PageEvent) {
+    this.indiceAtual = evento.pageIndex;
+    this.buscarItens();
+  }
 
 }

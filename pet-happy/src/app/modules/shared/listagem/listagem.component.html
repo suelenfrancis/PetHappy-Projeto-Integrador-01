@@ -3,7 +3,7 @@
         <div class="listagem__acoes__filtros">
             <div class="listagem__acoes__filtros__nome">
                 <label for=""></label>
-                <input type="text" placeholder=" Pesquisar por nome" />
+                <input type="text" placeholder=" Pesquisar por nome" [formControl]="buscaControl"/>
             </div>
         </div>
         <a 
@@ -21,10 +21,14 @@
         <div class="listagem__visualizacao__cartoes">
             <ng-container #container></ng-container>
         </div>
-        <div 
-        *ngIf="itens.length > 0, else semItens"
-        >
-        </div>
+        <div *ngIf="itens.length > 0, else semItens"></div>
+        <mat-paginator
+            (page)="eventoMudouPagina($event)"
+            [hidePageSize]="true"
+            [length]="totalRegistros"
+            [pageIndex]="indiceAtual"
+            [pageSize]="tamanhoPagina"
+        ></mat-paginator>
     </section>
     <button class="botao-voltar" onclick="history.back()">
         <span class="icone-voltar">&#8592;</span>

@@ -15,11 +15,13 @@ export class ClientesService implements IService {
 
   constructor(private http: HttpClient) { }
 
-  public obterTodos(search = ''): Observable<IResponsePaginada<ICliente>> {
-    const options = search.length > 0 
-      ? { params: new HttpParams().set('search', search) }
-      : {};
-    return this.http.get<IResponsePaginada<ICliente>>(this.API_URL, options);
+  public obterTodos(search = '', page = 0): Observable<IResponsePaginada<ICliente>> {
+    let params = new HttpParams();
+    params = params.set('page', page);
+    if (search.length > 0) {
+      params = params.set('search', search);
+    }
+    return this.http.get<IResponsePaginada<ICliente>>(this.API_URL, { params: params });
   }
 
   public cadastrar(cliente: ICliente): Observable<HttpResponse<ICliente>> {

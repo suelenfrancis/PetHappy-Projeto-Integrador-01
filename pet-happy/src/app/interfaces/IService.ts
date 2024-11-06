@@ -2,7 +2,7 @@ import { Observable } from "rxjs";
 import IResponsePaginada from "./IResponsePaginada";
 
 interface IService {
-    obterTodos(): Observable<IResponsePaginada<any>>;
+    obterTodos(search: string, page: number): Observable<IResponsePaginada<any>>;
 }
 
 export default IService;

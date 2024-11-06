@@ -21,6 +21,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatIconModule } from '@angular/material/icon';
 import { InputTextoComponent } from './input-texto/input-texto.component';
 import { MultiRegistroComponent } from './multi-registro/multi-registro.component';
+import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { MultiRegistroComponent } from './multi-registro/multi-registro.componen
     MatSelectModule,
     MatDialogModule,
     MatAutocompleteModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule,
   ],
   exports: [
     HeaderComponent,
