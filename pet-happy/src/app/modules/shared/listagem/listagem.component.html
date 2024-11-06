@@ -1,17 +1,23 @@
 <div class="listagem">
     <section class="listagem__acoes">
+        <div class="listagem__acoes__filtros">
+            <div class="listagem__acoes__filtros__nome">
+                <label for=""></label>
+                <input type="text" placeholder=" Pesquisar por nome" />
+            </div>
+        </div>
+        <a 
+        class="listagem__acoes__botao" 
+        routerLink="/"
+        >Home</a>
+        
         <a 
             class="listagem__acoes__botao" 
             [routerLink]="gerarLinkParaCadastro()"
         >{{ gerarMsgBotaoCadastro() }}</a>
-    </section>
+    </section>   
     <section class="listagem__visualizacao">
-        <div class="listagem__visualizacao__filtros">
-            <div class="listagem__visualizacao__filtros__nome">
-                <label for=""></label>
-                <input type="text" placeholder="Pesquisar por nome" />
-            </div>
-        </div>
+        
         <div class="listagem__visualizacao__cartoes">
             <ng-container #container></ng-container>
         </div>
@@ -20,6 +26,10 @@
         >
         </div>
     </section>
+    <button class="botao-voltar" onclick="history.back()">
+        <span class="icone-voltar">&#8592;</span>
+        Voltar
+    </button>
 </div>
 
 <ng-template #semItens>

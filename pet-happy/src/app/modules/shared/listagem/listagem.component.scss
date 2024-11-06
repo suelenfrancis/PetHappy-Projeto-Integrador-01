@@ -10,6 +10,35 @@
         padding: 1rem;
         &__botao {
             font-family: 'Roboto', sans-serif;
+            color: black;
+            background-color: #dc946a;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease; 
+            border: none; 
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            &:hover {
+                background-color: white;
+                box-shadow: 0 6px 12px rgba(74, 144, 226, 0.3);
+                transform: scale(1.05);
+                transition: scale 0.5s;
+                scale: 1.1;
+            }
+            &__acoes__botao:focus {
+                outline: none; 
+                box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2); 
+            }
+        }
+        &__filtros {
+            font-family: 'Roboto', sans-serif;
             color: var(--cor-primaria);
             background-color: none;
             border-radius: 0.75rem;
@@ -24,14 +53,20 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            &:hover {
-                background-color: #f6d096;
-                box-shadow: 0 6px 12px rgba(74, 144, 226, 0.3);
-                transform: scale(1.05);
-                transition: scale 0.5s;
-                scale: 1.1;
+            margin-right: 10px;
+            width: 750px;
+           & input {
+                width: 100%;
+                padding: 0.02rem;
+                border: 1px solid #ddd;
+                border-radius: 0.5rem;
+                font-size: 1rem;
+                font-family: 'Roboto', sans-serif;
+                color: #333;
+                margin-right: 10px;
+                width: 740px;
             }
-            &__acoes__botao:focus {
+            &__acoes__filtros:focus {
                 outline: none; 
                 box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2); 
             }
@@ -43,56 +78,7 @@
         width: 80%;
         margin: 0 auto;
         gap: 1rem;
-        &__filtros {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #f7f5f2;
-            color: var(--cor-primaria);
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            &__nome {
-                display: flex;
-                flex-direction: column;
-                gap: 0.75rem;
-                width: 100%;
-                & input {
-                    padding: 0.75rem;
-                    border-radius: 0.75rem;
-                    border: 2px solid #ddd;
-                    font-size: 14px;
-                    color: var(--cor-primaria);
-                    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-                    outline: none;
-                    background-color: #fff;
-             
-
-                }
-
-                input:focus {
-                    border-color: var(--cor-primaria); 
-                    box-shadow: 0 2px 6px rgba(74, 144, 226, 0.3); 
-                }
-
-                input::placeholder {
-                    color: #888; 
-                    font-size: 13px;
-                    font-style: italic;
-                }
-
-                @media (max-width: 768px) {
-                    &__visualizacao {
-                        width: 95%; /* ajusta a largura em telas pequenas */
-                    }
-                
-                    &__filtros {
-                        padding: 1rem;
-                    }
-                }
-            }
-        }
+        
         &__cartoes {
             display: flex;
             flex-direction: row;
@@ -103,6 +89,31 @@
             justify-content: center;
         }
     }
+    .botao-voltar {
+        display: inline-flex;
+        align-items: center;
+        font-size: 1rem;
+        color: #333;
+        background: none;
+        border: 1px solid #101010; 
+        border-radius: 1rem; 
+        border: 1px solid #333;
+        cursor: pointer;
+        padding: 0.5rem 1.5rem;
+        font-weight: bold;
+        position: fixed;
+        bottom: 1rem; 
+        right: 1rem; 
+        width: auto;
+        height: auto;
+        text-align: left;
+    }
+    
+    .icone-voltar {
+        margin-right: 0.5rem; 
+        font-size: 1.2rem;
+    }
+
 }
 
 .sem-itens {

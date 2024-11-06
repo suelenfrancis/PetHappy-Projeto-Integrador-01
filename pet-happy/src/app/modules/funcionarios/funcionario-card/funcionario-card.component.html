@@ -8,15 +8,15 @@
         <h3 class="cartao__nome">{{ dados.pessoa.nome }}</h3>
         <div class="cartao__info">
             <mat-icon fontIcon="home"></mat-icon>
-            <p>{{ exibirEndereco() }}</p>
+            {{ exibirEndereco() }}
         </div>
         <div class="cartao__info">
             <mat-icon fontIcon="phone"></mat-icon>
-            <p>{{ exibirTelefones() }}</p>
+            {{ exibirTelefones() }}
         </div>
         <div class="cartao__info">
             <mat-icon fontIcon="email"></mat-icon>
-            <p>{{ dados.usuario?.email }}</p>
+            {{ dados.usuario?.email }}
         </div>
     </div>
 </div>
