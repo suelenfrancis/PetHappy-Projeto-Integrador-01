@@ -23,7 +23,7 @@ export class InputAutocompleteComponent implements OnInit {
     this.filtrados = this.control.valueChanges.pipe(
       debounceTime(this.INTERVALO),
       tap(termoBusca => console.log(`Buscando por ${termoBusca} ...`)),
-      switchMap(termoBusca => this.clientesService.obterTodos(termoBusca)),
+      switchMap(termoBusca => this.clientesService.listar(termoBusca)),
       map(response => response.results),
       catchError(erro => {
         console.log(erro);

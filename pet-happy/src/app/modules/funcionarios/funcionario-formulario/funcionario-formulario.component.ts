@@ -38,7 +38,7 @@ export class FuncionarioFormularioComponent implements OnInit {
   ngOnInit(): void {
     const funcionarioId = this.activatedRoute.snapshot.paramMap.get('id');
     if(funcionarioId) {
-      this.funcionariosService.obterPeloId(Number(funcionarioId)).subscribe({
+      this.funcionariosService.obter(Number(funcionarioId)).subscribe({
         next: (funcionario) => this.carregarFormularioParaEdicao(funcionario),
         error: erro => alert('Ocorreu um erro ao buscar os dados do funcionário: ' + erro)
       });

@@ -1,41 +1,10 @@
-import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import ICliente from '../interfaces/ICliente';
-import { environment } from 'src/environments/environment';
-import IResponsePaginada from '../interfaces/IResponsePaginada';
-import IService from '../interfaces/IService';
+import { BaseService } from './base.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ClientesService implements IService {
-
-  private readonly API_URL = `${environment.API_BASE_URL}/clientes/`;
-
-  constructor(private http: HttpClient) { }
-
-  public obterTodos(search = ''): Observable<IResponsePaginada<ICliente>> {
-    const options = search.length > 0 
-      ? { params: new HttpParams().set('search', search) }
-      : {};
-    return this.http.get<IResponsePaginada<ICliente>>(this.API_URL, options);
-  }
-
-  public cadastrar(cliente: ICliente): Observable<HttpResponse<ICliente>> {
-    return this.http.post<ICliente>(this.API_URL, cliente, { observe: 'response' });
-  }
-
-  public obterPeloId(id: number): Observable<ICliente> {
-    return this.http.get<ICliente>(`${this.API_URL}${id}`);
-  }
-
-  public atualizar(cliente: ICliente): Observable<HttpResponse<ICliente>> {
-    return this.http.put<ICliente>(
-      `${this.API_URL}${cliente.id}/`, 
-      cliente, 
-      { observe: 'response' }
-    );
-  }
-
+export class ClientesService extends BaseService<ICliente> {
+  constructor() { super('clientes') }
 }

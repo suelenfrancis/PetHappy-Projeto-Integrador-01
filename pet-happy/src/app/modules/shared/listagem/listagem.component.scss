@@ -77,16 +77,11 @@
         flex-direction: column;
         width: 80%;
         margin: 0 auto;
-        gap: 1rem;
-        
         &__cartoes {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            padding: 1rem 0;
-            gap: 1rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             align-items: center;
-            justify-content: center;
+            justify-items: center;
         }
     }
     .botao-voltar {

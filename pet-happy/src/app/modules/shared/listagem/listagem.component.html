@@ -1,9 +1,9 @@
-<div class="listagem">
+<main class="listagem">
     <section class="listagem__acoes">
         <div class="listagem__acoes__filtros">
             <div class="listagem__acoes__filtros__nome">
                 <label for=""></label>
-                <input type="text" placeholder=" Pesquisar por nome" />
+                <input type="text" placeholder=" Pesquisar por nome" [formControl]="buscaControl"/>
             </div>
         </div>
         <a 
@@ -17,20 +17,23 @@
         >{{ gerarMsgBotaoCadastro() }}</a>
     </section>   
     <section class="listagem__visualizacao">
-        
         <div class="listagem__visualizacao__cartoes">
             <ng-container #container></ng-container>
         </div>
-        <div 
-        *ngIf="itens.length > 0, else semItens"
-        >
-        </div>
+        <div *ngIf="itens.length > 0, else semItens"></div>
+        <mat-paginator
+            (page)="eventoMudouPagina($event)"
+            [hidePageSize]="true"
+            [length]="totalRegistros"
+            [pageIndex]="indiceAtual"
+            [pageSize]="tamanhoPagina"
+        ></mat-paginator>
     </section>
     <button class="botao-voltar" onclick="history.back()">
         <span class="icone-voltar">&#8592;</span>
         Voltar
     </button>
-</div>
+</main>
 
 <ng-template #semItens>
     <div class="sem-itens">
