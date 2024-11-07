@@ -69,7 +69,7 @@ export class ListagemComponent implements OnInit, OnDestroy {
 
   private buscarItens() {
     this.itens = [];
-    this.loadingService.startLoading();
+    this.loadingService.start();
     this.serviceSubs = this.service?.listar(this.buscaControl.value ?? '', this.indiceAtual + 1)
     .subscribe({
       next: response => {
@@ -78,7 +78,7 @@ export class ListagemComponent implements OnInit, OnDestroy {
       },
       complete: () => {
         this.renderizaItens();
-        this.loadingService.stopLoading();
+        this.loadingService.stop();
       }
     });
   }

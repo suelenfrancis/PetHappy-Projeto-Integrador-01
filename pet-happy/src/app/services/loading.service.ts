@@ -11,11 +11,11 @@ export class LoadingService {
 
   constructor() { }
 
-  public startLoading(): void {
+  public start(): void {
     this._isLoading.next(true);
   }
 
-  public stopLoading(): void {
+  public stop(): void {
     this._isLoading.next(false);
   }
 }
