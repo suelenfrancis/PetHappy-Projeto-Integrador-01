@@ -5,39 +5,11 @@ import ICliente from '../interfaces/ICliente';
 import { environment } from 'src/environments/environment';
 import IResponsePaginada from '../interfaces/IResponsePaginada';
 import IService from '../interfaces/IService';
+import { BaseService } from './base.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ClientesService implements IService {
-
-  private readonly API_URL = `${environment.API_BASE_URL}/clientes/`;
-
-  constructor(private http: HttpClient) { }
-
-  public obterTodos(search = '', page = 0): Observable<IResponsePaginada<ICliente>> {
-    let params = new HttpParams();
-    params = params.set('page', page);
-    if (search.length > 0) {
-      params = params.set('search', search);
-    }
-    return this.http.get<IResponsePaginada<ICliente>>(this.API_URL, { params: params });
-  }
-
-  public cadastrar(cliente: ICliente): Observable<HttpResponse<ICliente>> {
-    return this.http.post<ICliente>(this.API_URL, cliente, { observe: 'response' });
-  }
-
-  public obterPeloId(id: number): Observable<ICliente> {
-    return this.http.get<ICliente>(`${this.API_URL}${id}`);
-  }
-
-  public atualizar(cliente: ICliente): Observable<HttpResponse<ICliente>> {
-    return this.http.put<ICliente>(
-      `${this.API_URL}${cliente.id}/`, 
-      cliente, 
-      { observe: 'response' }
-    );
-  }
-
+export class ClientesService extends BaseService<ICliente> {
+  constructor() { super('clientes') }
 }

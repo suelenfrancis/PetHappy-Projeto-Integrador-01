@@ -77,7 +77,7 @@ export class PetFormularioComponent implements OnInit {
     );
     const petId = this.activatedRoute.snapshot.paramMap.get('id');
     if(petId) {
-      this.petService.obterPeloId(Number(petId)).subscribe({
+      this.petService.obter(Number(petId)).subscribe({
         next: (pet) => this.carregarFormularioParaEdicao(pet),
         error: erro => alert('Ocorreu um erro ao buscar os dados do pet: ' + erro)
       });

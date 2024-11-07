@@ -35,7 +35,7 @@ export class ClienteFormularioComponent {
   ngOnInit(): void {
     const clienteId = this.activatedRoute.snapshot.paramMap.get('id');
     if(clienteId) {
-      this.clienteService.obterPeloId(Number(clienteId)).subscribe({
+      this.clienteService.obter(Number(clienteId)).subscribe({
         next: (cliente) => this.carregarFormularioParaEdicao(cliente),
         error: erro => alert('Ocorreu um erro ao buscar os dados do cliente: ' + erro)
       });
