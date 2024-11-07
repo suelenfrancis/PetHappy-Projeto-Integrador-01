@@ -7,7 +7,6 @@ import { PageEvent } from '@angular/material/paginator';
 import { FormControl } from '@angular/forms';
 import { debounceTime, Subscription } from 'rxjs';
 import { LoadingService } from 'src/app/services/loading.service';
-import { BaseService } from 'src/app/services/base.service';
 
 @Component({
   selector: 'app-listagem',
