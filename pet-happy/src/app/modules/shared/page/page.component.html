@@ -1,3 +1,6 @@
+<div *ngIf="estaCarregando$ | async" class="load mat-spinner-color">
+    <mat-spinner class="load__spinner"/>
+</div>
 <app-header *ngIf="incluirCabecalho"></app-header>
 <div class="conteudo">
     <ng-content />

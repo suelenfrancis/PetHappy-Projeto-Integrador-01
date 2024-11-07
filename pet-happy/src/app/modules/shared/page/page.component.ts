@@ -1,26 +1,21 @@
-import {Component, ElementRef, HostListener, Input, OnInit, Renderer2} from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-page',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.scss']
 })
-export class PageComponent implements OnInit {
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
+export class PageComponent  {
 
-  @Input() incluirCabecalho: boolean = true;
+  @Input() public incluirCabecalho: boolean = true;
+  public estaCarregando$: Observable<boolean> = new Observable<boolean>();
+
+  constructor(private loadingService: LoadingService) {}
 
   ngOnInit(): void {
-    this.setMaxWidth();
+    this.estaCarregando$ = this.loadingService.isLoading$;
   }
 
-  @HostListener('window:resize')
-  onResize() {
-    this.setMaxWidth();
-  }
-
-  setMaxWidth() {
-    const width = window.innerWidth * 0.7; // Calculate 70% of the window width
-    this.renderer.setStyle(this.el.nativeElement.querySelector('.schedule'), 'max-width', `${width}px`);
-  }
 }

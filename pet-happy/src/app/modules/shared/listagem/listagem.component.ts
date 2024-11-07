@@ -6,6 +6,7 @@ import { PetsService } from 'src/app/services/pets.service';
 import { PageEvent } from '@angular/material/paginator';
 import { FormControl } from '@angular/forms';
 import { debounceTime, Subscription } from 'rxjs';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-listagem',
@@ -28,7 +29,7 @@ export class ListagemComponent implements OnInit, OnDestroy {
   serviceSubs?: Subscription;
   buscaSubs?: Subscription;
   
-  constructor(private injector: Injector) {}
+  constructor(private injector: Injector, private loadingService: LoadingService) {}
   
   ngOnInit(): void {
     this.obterServico();
@@ -67,13 +68,18 @@ export class ListagemComponent implements OnInit, OnDestroy {
   }
 
   private buscarItens() {
+    this.itens = [];
+    this.loadingService.startLoading();
     this.serviceSubs = this.service?.obterTodos(this.buscaControl.value ?? '', this.indiceAtual + 1)
     .subscribe({
       next: response => {
         this.itens = response.results;
         this.totalRegistros = response.count;
       },
-      complete: () => this.renderizaItens()
+      complete: () => {
+        this.renderizaItens();
+        this.loadingService.stopLoading();
+      }
     });
   }
 
@@ -86,7 +92,9 @@ export class ListagemComponent implements OnInit, OnDestroy {
   }
 
   public gerarMsgSemItens(): string {
-    return `Nenhum ${this.modelo} cadastrado`;
+    return this.buscaControl.value 
+      ? `Nenhum registro encontrado para o filtro: "${this.buscaControl.value}"`
+      : 'Nenhum registro foi encontrado';
   }
 
   public eventoMudouPagina(evento: PageEvent) {
