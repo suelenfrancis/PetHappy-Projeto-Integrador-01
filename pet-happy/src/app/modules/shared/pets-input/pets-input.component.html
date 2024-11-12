@@ -1,0 +1,29 @@
+<div class="pets-input">
+  <div class="pets-input__buscar">
+    <mat-form-field>
+        <mat-label>{{ label }}</mat-label>
+        <input 
+          matInput
+          type="text"
+          [placeholder]="placeholder"
+          [formControl]="buscaControl"
+          [matAutocomplete]="auto"
+        >
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="exibirItens">
+          <mat-option *ngFor="let item of filtrados | async" [value]="item">
+            <span>{{ item.nome }}</span>
+            <small>{{ item.tutor?.pessoa?.nome }}</small>
+          </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <button 
+      mat-raised-button 
+      type="button" 
+      (click)="adicionarPet()" 
+      [disabled]="desativarBotao()"
+    >Adicionar</button>
+  </div>
+  <div class="pets-input__selecionados">
+      <app-pet-card *ngFor="let item of selecionados" [dados]="item" [redirect]="false"/>
+  </div>
+</div>

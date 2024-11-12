@@ -1,0 +1,11 @@
+.pets-input {
+    &__buscar {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+    &__selecionados {
+        display: flex;
+    }
+}

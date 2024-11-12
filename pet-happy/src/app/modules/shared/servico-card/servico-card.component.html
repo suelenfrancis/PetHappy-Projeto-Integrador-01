@@ -1,0 +1,20 @@
+<div class="cartao" (click)="redirecionaParaAtualizar()">
+    <div class="cartao__conteudo">
+        <div class="cartao__info">
+            <mat-icon fontIcon="alarm"></mat-icon>
+            <p>{{ mostrarDataHora() }}</p>
+        </div>
+        <div class="cartao__info">
+            <mat-icon fontIcon="work"></mat-icon>
+            <p>{{ dados.funcionario?.pessoa?.nome }}</p>
+        </div>
+        <div class="cartao__info">
+            <mat-icon fontIcon="shop"></mat-icon>
+            <p>{{ mostrarTipo() }}</p>
+        </div>
+        <div class="cartao__info">
+            <mat-icon fontIcon="note"></mat-icon>
+            <p>{{ mostrarStatus() }}</p>
+        </div>
+    </div>
+</div>

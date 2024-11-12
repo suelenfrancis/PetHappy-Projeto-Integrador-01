@@ -7,6 +7,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { FormControl } from '@angular/forms';
 import { debounceTime, Subscription } from 'rxjs';
 import { LoadingService } from 'src/app/services/loading.service';
+import { ServicoService } from 'src/app/services/servico.service';
 
 @Component({
   selector: 'app-listagem',
@@ -56,6 +57,9 @@ export class ListagemComponent implements OnInit, OnDestroy {
     }
     else if (this.recurso == 'pets') {
       this.service = <PetsService>this.injector.get(PetsService);
+    }
+    else if (this.recurso == 'servicos') {
+      this.service = <ServicoService>this.injector.get(ServicoService);
     }
   }
 

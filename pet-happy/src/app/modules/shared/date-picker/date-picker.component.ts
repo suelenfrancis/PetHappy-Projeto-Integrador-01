@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'app-date-picker',
@@ -10,4 +11,8 @@ export class DatePickerComponent {
   @Input() public label: string = '';
   @Input() public hint: string = '';
   @Input() public control: FormControl = new FormControl();
+  @Input() public incluirHora: boolean = false;
+  @Input() public dataMinima?: Date;
+  @Input() public dataMaxima?: Date;
+  
 }
