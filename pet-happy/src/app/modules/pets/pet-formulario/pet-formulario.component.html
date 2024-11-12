@@ -34,6 +34,8 @@
               <app-date-picker
                   [control]="obterControle('data_nascimento')"
                   label="Data de Nascimento"
+                  [dataMaxima]="dataMaximaNascimento"
+                  [incluirHora]="false"
               />
               <app-dropdown
                   [control]="obterControle('sexo')"
@@ -63,7 +65,9 @@
       <!-- Feeding Section -->
       <fieldset class="formulario__fieldset">
           <legend class="formulario__legend">Alimentação</legend>
-          <app-multi-alimentos
+          <app-input-texto
+              label="Alimentação"
+              placeholder="Descreva a alimentação do pet"
               [control]="obterControle('alimentos')"
           />
       </fieldset>
@@ -71,7 +75,9 @@
       <!-- Medications Section -->
       <fieldset class="formulario__fieldset">
           <legend class="formulario__legend">Medicamentos</legend>
-          <app-multi-medicamentos
+          <app-input-texto
+              label="Medicamentos"
+              placeholder="Descreva os horários e dose de medicamentos"
               [control]="obterControle('medicamentos')"
           />
       </fieldset>
@@ -79,7 +85,9 @@
       <!-- Special Care Section -->
       <fieldset class="formulario__fieldset">
           <legend class="formulario__legend">Cuidados Especiais</legend>
-          <app-multi-cuidados-especiais
+          <app-input-texto
+              label="Cuidados Especiais"
+              placeholder="Descreva os cuidados especiais do pet"
               [control]="obterControle('cuidados_especiais')"
           />
       </fieldset>

@@ -7,12 +7,16 @@
     <div class="cartao__conteudo">
         <h3 class="cartao__nome">{{ dados.nome }}</h3>
         <div class="cartao__info">
-            <mat-icon fontIcon="home"></mat-icon>
-            <p>{{ dados.categoria?.descricao }}</p>
+            <mat-icon fontIcon="pets"></mat-icon>
+            <small>{{ dados.categoria?.id }}</small>
         </div>
         <div class="cartao__info">
-            <mat-icon fontIcon="phone"></mat-icon>
+            <mat-icon fontIcon="person"></mat-icon>
             <p>{{ dados.tutor?.pessoa?.nome }}</p>
+        </div>
+        <div class="cartao__info" *ngFor="let telefone of dados.tutor?.pessoa?.telefones">
+            <mat-icon fontIcon="phone"></mat-icon>
+            <p>{{ telefone.numero  }}</p>
         </div>
     </div>
 </div>

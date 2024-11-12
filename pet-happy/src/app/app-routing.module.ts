@@ -23,6 +23,11 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'servicos',
+    redirectTo: '/servicos',
+    pathMatch: 'full',
+  },
+  {
     path: 'login',
     redirectTo: '/login',
     pathMatch: 'full'

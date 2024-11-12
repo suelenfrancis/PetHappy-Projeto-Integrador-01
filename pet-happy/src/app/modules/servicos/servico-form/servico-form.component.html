@@ -1,0 +1,53 @@
+<app-page>
+    <main class="container">
+        <form 
+            class="formulario" 
+            [formGroup]="formularioServico" 
+            (ngSubmit)="cadastrarOuAtualizar()" 
+        >
+            <h2>{{ exibirTitulo() }}</h2>
+            <fieldset>
+                <legend>Responsável</legend>
+                <app-input-autocomplete
+                    label="Funcionário"
+                    [control]="obterControle('funcionario')"
+                    recurso="funcionarios"
+                />
+            </fieldset>
+            <fieldset>
+                <legend>Informações Gerais</legend>
+                <app-dropdown 
+                    [control]="obterControle('tipo')"
+                    label="Tipo"
+                    [options]="opcoesTipo"
+                />
+                <app-dropdown 
+                    [control]="obterControle('status')"
+                    label="Status"
+                    [options]="opcoesStatus"
+                />
+                <app-date-picker 
+                    [control]="obterControle('data_hora_inicio')"
+                    label="Data e Hora Início"
+                    [incluirHora]="true"
+                />
+                <app-date-picker 
+                    [control]="obterControle('data_hora_fim')"
+                    label="Data e Hora Fim"
+                    [incluirHora]="true"
+                />
+            </fieldset>
+            <fieldset>
+                <legend>Pets</legend>
+                <app-pets-input
+                    label="Pesquisar Pet"
+                    [control]="obterControle('pets')"
+                />
+            </fieldset>
+            <div class="formulario__botaoContainer" >
+                <button type='submit' [disabled]="desabilitaBotao()">{{ exibirTextoBotao() }}</button>
+            </div>
+        </form>
+    </main>
+</app-page>
+

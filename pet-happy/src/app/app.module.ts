@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './modules/home/home.module';
 import { ClientesModule } from './modules/clientes/clientes.module';
 import { PetsModule } from './modules/pets/pets.module';
+import { ServicosModule } from './modules/servicos/servicos.module';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { PetsModule } from './modules/pets/pets.module';
     HomeModule,
     ClientesModule,
     PetsModule,
+    ServicosModule,
     BrowserAnimationsModule
   ],
   providers: [

@@ -23,6 +23,11 @@ import { InputTextoComponent } from './input-texto/input-texto.component';
 import { MultiRegistroComponent } from './multi-registro/multi-registro.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatButtonModule } from '@angular/material/button';
+import { PetsInputComponent } from './pets-input/pets-input.component';
+import { PetCardComponent } from './pet-card/pet-card.component';
+import { ServicoCardComponent } from './servico-card/servico-card.component';
+import { NgxMatDatetimePickerModule, NgxMatNativeDateAdapter, NgxMatNativeDateModule } from '@angular-material-components/datetime-picker';
 
 
 @NgModule({
@@ -37,7 +42,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ModalComponent,
     InputAutocompleteComponent,
     InputTextoComponent,
-    MultiRegistroComponent
+    MultiRegistroComponent,
+    PetsInputComponent,
+    PetCardComponent,
+    ServicoCardComponent,
   ],
   imports: [
     CommonModule,
@@ -54,6 +62,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatIconModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,
+    MatButtonModule,
+    NgxMatDatetimePickerModule,
+    NgxMatNativeDateModule,
   ],
   exports: [
     HeaderComponent,
@@ -66,7 +77,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ModalComponent,
     InputAutocompleteComponent,
     InputTextoComponent,
-    MultiRegistroComponent
+    MultiRegistroComponent,
+    PetsInputComponent,
+    PetCardComponent,
+    ServicoCardComponent,
   ],
   providers: [
     {

@@ -3,12 +3,8 @@ import { CommonModule } from '@angular/common';
 import { PetsComponent } from './pets.component';
 import { PetsRoutingModule } from './pets-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { PetCardComponent } from './pet-card/pet-card.component';
+import { PetCardComponent } from '../shared/pet-card/pet-card.component';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
 import { PetFormularioComponent } from './pet-formulario/pet-formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MultiAlimentosComponent } from './pet-formulario/multi-alimentos/multi-alimentos.component';
@@ -25,7 +21,6 @@ import { CuidadoEspecialCardComponent } from './cuidado-especial-card/cuidado-es
 @NgModule({
   declarations: [
     PetsComponent,
-    PetCardComponent,
     PetFormularioComponent,
     MultiAlimentosComponent,
     AlimentosFormularioComponent,
@@ -45,7 +40,7 @@ import { CuidadoEspecialCardComponent } from './cuidado-especial-card/cuidado-es
     MatIconModule,
   ],
   exports: [
-    PetsComponent
+    PetsComponent,
   ]
 })
 export class PetsModule {}

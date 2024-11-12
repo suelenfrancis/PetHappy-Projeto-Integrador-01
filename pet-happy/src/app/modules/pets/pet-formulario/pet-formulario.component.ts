@@ -32,6 +32,7 @@ export class PetFormularioComponent implements OnInit {
   ];
   public opcoesCategoria: any[] = [];
   public opcoesPorte: any[] = [];
+  public dataMaximaNascimento = new Date();
 
   constructor(
     private petService: PetsService,
@@ -45,9 +46,9 @@ export class PetFormularioComponent implements OnInit {
       data_nascimento: new FormControl(null, Validators.required),
       sexo: new FormControl(null, Validators.required),
       raca: new FormControl(''),
-      medicamentos: new FormControl([]),
-      alimentos: new FormControl([]),
-      cuidados_especiais: new FormControl([]),
+      medicamentos: new FormControl(''),
+      alimentos: new FormControl(''),
+      cuidados_especiais: new FormControl(''),
       tutor: new FormControl(null, Validators.required),
       categoria_id: new FormControl(null, Validators.required),
       porte_id: new FormControl(null, Validators.required),

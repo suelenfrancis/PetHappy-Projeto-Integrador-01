@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import IPet from 'src/app/interfaces/IPet';
 
@@ -8,11 +8,15 @@ import IPet from 'src/app/interfaces/IPet';
   styleUrls: ['./pet-card.component.scss']
 })
 export class PetCardComponent {
-  public dados!: IPet;
+  
+  @Input() public dados!: IPet;
+  @Input() public redirect: boolean = true;
 
   constructor(private router: Router) {}
 
   public redirecionaParaAtualizar(): void {
-    this.router.navigate([`/pets/${this.dados.id}/form`]);
+    if(this.redirect) {
+      this.router.navigate([`/pets/${this.dados.id}/form`]);
+    }
   }
 }

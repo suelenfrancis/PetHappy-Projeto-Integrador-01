@@ -16,9 +16,9 @@ interface IPet {
     raca: string,
     categoria?: ICategoria,
     porte?: IPorte,
-    medicamentos?: IMedicamento[],
-    alimentos?: IAlimento[],
-    cuidados_especiais?: ICuidadoEspecial[],
+    medicamentos?: string,
+    alimentos?: string,
+    cuidados_especiais?: string,
     tutor_id?: number,
     categoria_id?: number,
     porte_id?: number

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PetCardComponent } from './pet-card/pet-card.component';
+import { PetCardComponent } from '../shared/pet-card/pet-card.component';
 
 @Component({
   selector: 'app-pets',

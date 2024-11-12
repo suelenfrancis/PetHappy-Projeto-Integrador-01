@@ -11,9 +11,9 @@ interface IPetForm {
     sexo: string,
     raca: string,
     data_nascimento: Date,
-    alimentos: IAlimento[],
-    cuidados_especiais: ICuidadoEspecial[],
-    medicamentos: IMedicamento[]
+    alimentos: string,
+    cuidados_especiais: string,
+    medicamentos: string
 }
 
 export default IPetForm;
