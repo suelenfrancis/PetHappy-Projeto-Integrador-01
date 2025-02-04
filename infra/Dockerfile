@@ -1,10 +1,10 @@
 # Primeiro passo: Container para buildar o projeto
-FROM node:18 as build-stage
+FROM node:18 AS build-stage
 WORKDIR /app
 COPY ../pet-happy/package*.json ./
 RUN npm install
 COPY ../pet-happy/ .
-RUN npm run build -- --configuration production
+RUN npm run build
 
 # Segundo passo: Container que irá servir a aplicação
 FROM nginx:alpine

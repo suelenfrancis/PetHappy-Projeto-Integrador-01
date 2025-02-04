@@ -11,11 +11,13 @@ export class TokenService {
   constructor(private cookieService: CookieService) { }
 
   public salvar(token: string): void {
+    const expiraEmUmaHora = new Date();
+    expiraEmUmaHora.setHours( expiraEmUmaHora.getHours() + 1 );
     this.cookieService.set(
         this.TOKEN_KEY,
         token,
         {
-            expires: 24 * 60 * 60,
+            expires: expiraEmUmaHora,
             path: '/'
         }
     )
